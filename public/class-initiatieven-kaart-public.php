@@ -110,7 +110,7 @@ class Initiatieven_Kaart_Public {
 		 * class.
 		 */
 
-		wp_enqueue_script( 'leaflet-js', plugin_dir_url( __FILE__ ) . 'js/leaflet.js', array( 'jquery' ), '1.8-dev', true );
+		wp_enqueue_script( 'leaflet-js', plugin_dir_url( __FILE__ ) . 'js/leaflet-min.js', array( 'jquery' ), '1.8-dev', true );
 
 		wp_enqueue_script( 'leaflet-gesture-handling-js', plugin_dir_url( __FILE__ ) . 'js/leaflet-gesture-handling.min.js', array( 'leaflet-js' ), $this->version, true );
 
