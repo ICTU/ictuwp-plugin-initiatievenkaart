@@ -199,12 +199,16 @@ Authors:
       const types = {};
 
       jQuery("." + this.mapItemClass).each(function (cntr, elem) {
+
         // for all elements with latitude and longitude data attributes, add a marker
         if (jQuery(elem).data("latitude") && jQuery(elem).data("longitude")) {
           const lat = jQuery(elem).data("latitude");
           const lon = jQuery(elem).data("longitude");
 
           const category = jQuery(elem).data("map-item-type") ? jQuery(elem).data("map-item-type") : "onbekend";
+          var plaatsnaam = jQuery(elem).data("map-item-plaats") ? jQuery(elem).data("map-item-plaats") : "onbekende plaatsnaam";
+          var initiatiefnaam = jQuery(elem).data("map-item-naam") ? jQuery(elem).data("map-item-naam") : "";
+
           // let's create a nice geojson feature for the data we found
           // use the list item content as popup content
           // also: keep track of the number of items for the type we found. This is for the Legend
@@ -224,12 +228,18 @@ Authors:
           let title = category;
           if (category in _self.typeLegendLabels) title = _self.typeLegendLabels[category];
 
+          var label = '';
+          if ( category && plaatsnaam && initiatiefnaam ) {
+//            label = '[[ ' + initiatiefnaam + ' in ' + plaatsnaam + ']]';
+            label = initiatiefnaam;
+          }
+
           const feature = {
             "type": "Feature",
             "properties": {
               "category": category,
               "popupContent": elem.innerHTML,
-              "title": title
+              "ojectname": label,
             },
             "geometry": {
               "type": "Point",
@@ -288,8 +298,8 @@ Authors:
           // wrapper function
           var category = feature.properties.category ? feature.properties.category : "onbekend";
           var labelTxt = _self.typeLegendLabels[category];
-          if (feature.properties.title) {
-            labelTxt = feature.properties.title;
+          if (feature.properties.ojectname) {
+            labelTxt = feature.properties.ojectname;
           }
           if (_self.types[feature.properties.category]) {
             if (_self.types[feature.properties.category].visible == true) {
@@ -309,11 +319,10 @@ Authors:
             // Thijs: de URL moet ook de basis bevatten (bij mij lokaal staat er nog /led/ voor). Nog een kleine aanpassing gedaan.
             iconUrl: _self.getIconURL(category),
           });
-          let lbl = "Icoon voor initiatief " + labelTxt;
+          let lbl = labelTxt;
           let marker = L.marker(latlng, {
             icon: customIcon,
-            alt: lbl,
-            title: labelTxt
+            alt: labelTxt
           });
           return marker
         }
@@ -413,9 +422,9 @@ Authors:
 
     fixAccessibilityIssues() {
       // tabindex, labels, roles for elements where this apparerently can;t be done at initialization
-      jQuery(".leaflet-marker-icon:not('.clusterIcon')").attr("role", "button").attr("aria-label", "Knop om een initiatief te tonen op deze locatie").attr("tabindex", "0");
+      jQuery(".leaflet-marker-icon:not('.clusterIcon')").attr("role", "button").attr("tabindex", "0");
       // clustericon: multiple
-      jQuery(".clusterIcon").attr("role", "button").attr("aria-label", "Knop om meerdere initiatieven te tonen op deze locatie").attr("tabindex", "0");
+      jQuery(".clusterIcon").attr("role", "button").attr("tabindex", "0");
       // custom controls:
       jQuery(".leaflet-control-zoomall").attr("role", "button").attr("aria-label", "Toon alles").attr("tabindex", "0");
 
@@ -466,7 +475,7 @@ Authors:
               iconSize = L.point(baseSize + 2 * increaseSize, baseSize + 2 * increaseSize);
             }
             return L.divIcon({
-              html: `<span title='Meerdere initiatieven'>${cluster.getChildCount()}</span>`,
+              html: `<span aria-label="${cluster.getChildCount()} initiatieven">${cluster.getChildCount()}</span>`,
               className: 'clusterIcon clusterIcon-' + sizeClass,
               iconSize: iconSize
             });

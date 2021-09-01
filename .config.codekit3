@@ -158,6 +158,148 @@
       "oAP" : "\/languages\/initiatieven-kaart.pot",
       "oF" : 0
     },
+    "\/leaflet.zip" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/leaflet.zip",
+      "oF" : 0
+    },
+    "\/leaflet\/images\/layers-2x.png" : {
+      "ft" : 32768,
+      "iS" : 1259,
+      "oA" : 0,
+      "oAP" : "\/leaflet\/images\/layers-2x.png",
+      "oF" : 0,
+      "oIPL" : 0,
+      "opt" : 0,
+      "oT" : 1,
+      "ou" : "lpckwebp-none",
+      "q" : 100,
+      "rq" : 75
+    },
+    "\/leaflet\/images\/layers.png" : {
+      "ft" : 32768,
+      "iS" : 696,
+      "oA" : 0,
+      "oAP" : "\/leaflet\/images\/layers.png",
+      "oF" : 0,
+      "oIPL" : 0,
+      "opt" : 0,
+      "oT" : 1,
+      "ou" : "lpckwebp-none",
+      "q" : 100,
+      "rq" : 75
+    },
+    "\/leaflet\/images\/marker-icon-2x.png" : {
+      "ft" : 32768,
+      "iS" : 2464,
+      "oA" : 0,
+      "oAP" : "\/leaflet\/images\/marker-icon-2x.png",
+      "oF" : 0,
+      "oIPL" : 0,
+      "opt" : 0,
+      "oT" : 1,
+      "ou" : "lpckwebp-none",
+      "q" : 100,
+      "rq" : 75
+    },
+    "\/leaflet\/images\/marker-icon.png" : {
+      "ft" : 32768,
+      "iS" : 1466,
+      "oA" : 0,
+      "oAP" : "\/leaflet\/images\/marker-icon.png",
+      "oF" : 0,
+      "oIPL" : 0,
+      "opt" : 0,
+      "oT" : 1,
+      "ou" : "lpckwebp-none",
+      "q" : 100,
+      "rq" : 75
+    },
+    "\/leaflet\/images\/marker-shadow.png" : {
+      "ft" : 32768,
+      "iS" : 618,
+      "oA" : 0,
+      "oAP" : "\/leaflet\/images\/marker-shadow.png",
+      "oF" : 0,
+      "oIPL" : 0,
+      "opt" : 0,
+      "oT" : 1,
+      "ou" : "lpckwebp-none",
+      "q" : 100,
+      "rq" : 75
+    },
+    "\/leaflet\/leaflet-src.esm.js" : {
+      "bF" : 0,
+      "ft" : 64,
+      "ma" : 0,
+      "mi" : 1,
+      "oA" : 0,
+      "oAP" : "\/leaflet\/leaflet-src.esm-min.js",
+      "oF" : 0,
+      "sC" : 3,
+      "tS" : 0
+    },
+    "\/leaflet\/leaflet-src.esm.js.map" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/leaflet\/leaflet-src.esm.js.map",
+      "oF" : 0
+    },
+    "\/leaflet\/leaflet-src.js" : {
+      "bF" : 0,
+      "ft" : 64,
+      "ma" : 0,
+      "mi" : 1,
+      "oA" : 0,
+      "oAP" : "\/leaflet\/leaflet-src-min.js",
+      "oF" : 0,
+      "sC" : 3,
+      "tS" : 0
+    },
+    "\/leaflet\/leaflet-src.js.map" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/leaflet\/leaflet-src.js.map",
+      "oF" : 0
+    },
+    "\/leaflet\/leaflet.css" : {
+      "aP" : 1,
+      "bl" : 0,
+      "ci" : 0,
+      "co" : 0,
+      "ft" : 16,
+      "ma" : 0,
+      "oA" : 0,
+      "oAP" : "\/leaflet\/leaflet-min.css",
+      "oF" : 0,
+      "pg" : 0
+    },
+    "\/leaflet\/leaflet.js" : {
+      "bF" : 0,
+      "ft" : 64,
+      "ma" : 0,
+      "mi" : 1,
+      "oA" : 0,
+      "oAP" : "\/leaflet\/leaflet-min.js",
+      "oF" : 0,
+      "sC" : 3,
+      "tS" : 0
+    },
+    "\/leaflet\/leaflet.js.map" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/leaflet\/leaflet.js.map",
+      "oF" : 0
+    },
     "\/LICENSE.txt" : {
       "cB" : 0,
       "ft" : 8192,
@@ -648,17 +790,6 @@
       "sC" : 3,
       "tS" : 0
     },
-    "\/public\/js\/leaflet.js" : {
-      "bF" : 0,
-      "ft" : 64,
-      "ma" : 0,
-      "mi" : 1,
-      "oA" : 0,
-      "oAP" : "\/public\/js\/leaflet-min.js",
-      "oF" : 0,
-      "sC" : 3,
-      "tS" : 0
-    },
     "\/public\/js\/leaflet.markercluster.js" : {
       "bF" : 0,
       "ft" : 64,
@@ -746,7 +877,7 @@
   },
   "projectAttributes" : {
     "creationDate" : 627250614.66987097,
-    "displayValue" : "Initiatieven-kaart LED",
+    "displayValue" : "ICTU Initiatieven-kaart LED",
     "displayValueWasSetByUser" : 1,
     "iconImageName" : "brackets-brick",
     "iconImageWasSetByUser" : 0
@@ -2167,7 +2298,7 @@
       }
     },
     "esLintSourceType" : 0,
-    "externalServerAddress" : "http:\/\/digitaleoverheid.gebruikercentraal.co.uk\/",
+    "externalServerAddress" : "http:\/\/www.digitaleoverheid.test\/",
     "gitIgnoreBuildFolder" : 1,
     "hideConfigFile" : 1,
     "jsCheckerReservedNamesString" : "",

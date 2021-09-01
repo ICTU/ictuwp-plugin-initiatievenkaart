@@ -1,3 +1,8 @@
 
 *.codekit3
 .idea/
+leaflet.zip
+leaflet/*
+
+*.xml
+public/js/initiatieven-kaart-public-min.js

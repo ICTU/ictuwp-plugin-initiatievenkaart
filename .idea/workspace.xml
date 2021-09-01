@@ -21,9 +21,10 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectId" id="1rWJ7VgPJ9CeV4negZKm2bp0LId" />
+  <component name="ProjectId" id="1xXSnob92DuriFYt2ivOajIbaRh" />
   <component name="ProjectViewState">
     <option name="autoscrollFromSource" value="true" />
+    <option name="autoscrollToSource" value="true" />
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
@@ -35,8 +36,8 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="1a24d279-8cc2-468f-858b-3f0dd79cecc0" name="Default Changelist" comment="" />
-      <created>1619085751665</created>
+      <changelist id="7b341cf1-028e-4d30-a6d7-4e17bb23d715" name="Default Changelist" comment="" />
+      <created>1630500109445</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1619085751665</updated>
