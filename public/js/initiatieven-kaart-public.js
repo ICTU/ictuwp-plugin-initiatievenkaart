@@ -276,9 +276,8 @@ Authors:
         onAdd: function (map) {
           const container = L.DomUtil.create('div', 'leaflet-bar leaflet-control leaflet-control-custom');
           const a = L.DomUtil.create('a', 'leaflet-control-zoomall', container);
-          a.innerHTML = '&harr;';
+          a.innerHTML = 'Toon alles';
           a.href = '#';
-          a.title = "Toon alles";
           a.onclick = function () {
             _self.getLMap().fitBounds(_self.pointsLayer.getBounds(), {
               padding: [50, 50]
@@ -425,8 +424,6 @@ Authors:
       jQuery(".leaflet-marker-icon:not('.clusterIcon')").attr("role", "button").attr("tabindex", "0");
       // clustericon: multiple
       jQuery(".clusterIcon").attr("role", "button").attr("tabindex", "0");
-      // custom controls:
-      jQuery(".leaflet-control-zoomall").attr("role", "button").attr("aria-label", "Toon alles").attr("tabindex", "0");
 
       // shadows: explicit hide these
       jQuery(".leaflet-marker-shadow").attr("aria-hidden", "true");
@@ -435,6 +432,15 @@ Authors:
 
       // no tabindex: the links inside should be accessible only
       jQuery(".leaflet-control-attribution").attr("tabindex", "0").attr("aria-label", "Attribution");
+
+      // zoom-knoppen een fatsoenlijke tekst geven
+      jQuery(".leaflet-control-zoom-in").removeAttr("title").removeAttr("aria-label").text('Zoom in');
+      jQuery(".leaflet-control-zoom-out").removeAttr("title").removeAttr("aria-label").text('Zoom uit');
+      // custom controls:
+      jQuery(".leaflet-control-zoomall").attr("role", "button").attr("tabindex", "0");
+
+
+
     }
 
     toggleListMap() {

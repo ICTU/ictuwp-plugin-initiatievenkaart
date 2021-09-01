@@ -74,18 +74,43 @@ class Initiatieven_Kaart_Public {
 		 * class.
 		 */
 
-		wp_register_style( 'leaflet-css', plugin_dir_url( __FILE__ ) . 'css/leaflet.css', array(), $this->version );
+		$version = $this->version;
+		if ( WP_DEBUG ) {
+			$file = plugin_dir_path( __FILE__ ) . 'css/leaflet.css';
+			$version = filemtime($file);
+		}
+		wp_register_style( 'leaflet-css', plugin_dir_url( __FILE__ ) . 'css/leaflet.css', array(), $version );
 		wp_enqueue_style( 'leaflet-css' );
 
-		wp_register_style( 'markercluster-css', plugin_dir_url( __FILE__ ) . 'css/MarkerCluster.css', array(), $this->version );
+		$version = $this->version;
+		if ( WP_DEBUG ) {
+			$file = plugin_dir_path( __FILE__ ) . 'css/MarkerCluster.css';
+			$version = filemtime($file);
+		}
+		wp_register_style( 'markercluster-css', plugin_dir_url( __FILE__ ) . 'css/MarkerCluster.css', array(), $version );
 		wp_enqueue_style( 'markercluster-css' );
 
-		wp_register_style( 'markercluster-default-css', plugin_dir_url( __FILE__ ) . 'css/MarkerCluster.Default.css', array(), $this->version );
+		$version = $this->version;
+		if ( WP_DEBUG ) {
+			$file = plugin_dir_path( __FILE__ ) . 'css/MarkerCluster.Default.css';
+			$version = filemtime($file);
+		}
+		wp_register_style( 'markercluster-default-css', plugin_dir_url( __FILE__ ) . 'css/MarkerCluster.Default.css', array(), $version );
 		wp_enqueue_style( 'markercluster-default-css' );
 
-		wp_enqueue_style( $this->initiatieven_kaart, plugin_dir_url( __FILE__ ) . 'css/initiatieven-kaart-public.css', array(), $this->version, 'all' );
+		$version = $this->version;
+		if ( WP_DEBUG ) {
+			$file = plugin_dir_path( __FILE__ ) . 'css/initiatieven-kaart-public.css';
+			$version = filemtime($file);
+		}
+		wp_enqueue_style( $this->initiatieven_kaart, plugin_dir_url( __FILE__ ) . 'css/initiatieven-kaart-public.css', array(), $version, 'all' );
 
-		wp_register_style( 'leaflet-gesture-handling-css', plugin_dir_url( __FILE__ ) . 'css/leaflet-gesture-handling.min.css', array(), $this->version );
+		$version = $this->version;
+		if ( WP_DEBUG ) {
+			$file = plugin_dir_path( __FILE__ ) . 'css/leaflet-gesture-handling.min.css';
+			$version = filemtime($file);
+		}
+		wp_register_style( 'leaflet-gesture-handling-css', plugin_dir_url( __FILE__ ) . 'css/leaflet-gesture-handling.min.css', array(), $version );
 		wp_enqueue_style( 'leaflet-gesture-handling-css' );
 
 

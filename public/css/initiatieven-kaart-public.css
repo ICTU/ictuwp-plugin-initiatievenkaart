@@ -126,3 +126,31 @@ beter is, dus eigenlijk hoort alles in dit bestand...
   background-color: #ffffff;
   line-height: initial;
 }
+
+
+.leaflet-top .leaflet-control-zoom-in,
+.leaflet-top .leaflet-control-zoom-out,
+.leaflet-top .leaflet-control-zoomall {
+  text-indent: -999rem;
+}
+.leaflet-top .leaflet-control-zoom-in:before,
+.leaflet-top .leaflet-control-zoom-out:before,
+.leaflet-top .leaflet-control-zoomall:before {
+  content: '-';
+  display: block;
+  width: 100%;
+  font-size: 1rem;
+  float: left;
+  text-indent: 0;
+}
+.leaflet-top .leaflet-control-zoom-in:before {
+  content: '+'
+}
+.leaflet-top .leaflet-control-zoom-out:before {
+  content: '-'
+}
+.leaflet-top .leaflet-control-zoomall:before {
+  content: '↔'
+}
+
+
