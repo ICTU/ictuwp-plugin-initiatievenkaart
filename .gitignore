@@ -6,3 +6,4 @@ leaflet/*
 
 *.xml
 public/js/initiatieven-kaart-public-min.js
+public/css/initiatieven-kaart-public-min.css

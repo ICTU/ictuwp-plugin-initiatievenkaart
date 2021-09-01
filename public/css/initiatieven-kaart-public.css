@@ -24,15 +24,21 @@ De kaartgrootte.
 
 .leaflet-marker-icon {
     text-align: center;
-    font-size: 1.1em;
 }
 
 /* Thijs: het kan voor andere styling van de cluster iconen nodig zijn deze styles aan te passen. Let dan op dat de grootte van de iconen in de javascript code wordt bepaald. Dus check ook js/initiatieven-kaart-public.js
  */
 .clusterIcon {
-    background-color: var(--rijksoverheid-blue);
-    color: #fff;
-    border-radius: 25%;
+  background-color: var(--rijksoverheid-blue);
+  color: #fff;
+  border-radius: 25%;
+}
+.clusterIcon span {
+  background-color: var(--rijksoverheid-blue);
+  color: #fff;
+  display: inline-block;
+  padding-left: .1rem;
+  padding-right: .1rem;
 }
 
 .clusterIcon-md {
