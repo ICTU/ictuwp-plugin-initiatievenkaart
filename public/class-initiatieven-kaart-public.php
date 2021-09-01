@@ -109,8 +109,13 @@ class Initiatieven_Kaart_Public {
 		 * between the defined hooks and the functions defined in this
 		 * class.
 		 */
+		$version = $this->version; // dit is NIET de versie van leaflet.js, maar ons eigen versienummer
 
-		wp_enqueue_script( 'leaflet-js', plugin_dir_url( __FILE__ ) . 'js/leaflet.js', array( 'jquery' ), '1.7.1', true );
+		if ( WP_DEBUG ) {
+			$file = plugin_dir_path( __FILE__ ) . 'js/leaflet.js';
+			$version = filemtime($file);
+		}
+		wp_enqueue_script( 'leaflet-js', plugin_dir_url( __FILE__ ) . 'js/leaflet.js', array( 'jquery' ), $version, true );
 
 		wp_enqueue_script( 'leaflet-gesture-handling-js', plugin_dir_url( __FILE__ ) . 'js/leaflet-gesture-handling.min.js', array( 'leaflet-js' ), $this->version, true );
 
