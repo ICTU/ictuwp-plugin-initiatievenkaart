@@ -360,7 +360,7 @@ function led_get_list_item_archive( $postobject, $initiatieficons = array() ) {
 
 		$return .= sprintf( "\n\n" . '<li class="map-item" data-latitude="%s" data-longitude="%s" data-map-item-type="%s" data-map-item-plaats="%s" data-map-item-naam="%s">', $bestLatitude, $bestLongitude, join( " ", $classes ), $plaatsnaam, $title );
 		$return .= sprintf( "\n" . '<h2><a href="%s">%s</a></h2>', $permalink, $title );
-		$return .= sprintf( "\n" .  '%s', $initiatieftype );
+		$return .= sprintf( "\n" . '%s', $initiatieftype );
 
 		// iets van een samenvatting, beschrijving tonen hier
 		$return .= sprintf( '<p>%s</p>', wp_strip_all_tags( get_the_excerpt() ) );
@@ -596,7 +596,7 @@ function led_initiatieven_archive_title( $doreturn = false ) {
 		} else {
 			// Niks geen initiatieven niet. Nul, nada, noppes, nihil.
 			// Zeeland en Drenthe, laat van je HO-REN!
-			$return              = '<h1>Geen initiatieven gevonden voor ' . $archive_title . '</h1>';
+			$return              = '<h1>' . sprintf( _x( 'Geen initiatieven gevonden voor %s', "Geen initiatieven", 'initiatieven-kaart' ), $archive_title ) . '</h1>';
 			$archive_description = 'Sorry.';
 		}
 
@@ -787,7 +787,7 @@ function led_initiatieven_filter_breadcrumb( $crumb = '', $args = '' ) {
 		}
 	}
 
-	if ( $post->ID === $optionpage ) {
+	if ( isset( $post->ID ) && $post->ID === $optionpage ) {
 		//
 	} elseif ( is_post_type_archive( CPT_INITIATIEF ) ) {
 		//
@@ -845,3 +845,58 @@ function led_initiatieven_list_before( $doreturn = true ) {
 
 //========================================================================================================
 
+add_filter( 'pre_get_document_title', 'led_initiatieven_add_to_page_titles', 10, 2 ); // standard WordPress hook for <title>
+add_filter( 'wp_title', 'led_initiatieven_add_to_page_titles', 10, 2 ); // standard WordPress hook for <title>
+add_filter( 'wpseo_title', 'led_initiatieven_add_to_page_titles' ); // hook voor Yoast SEO
+
+
+function led_initiatieven_add_to_page_titles( $title ) {
+	global $wp_query;
+	$led_pageid_overview = get_theme_mod( 'customizer_led_pageid_overview' );
+	$page_template       = get_post_meta( get_the_id(), '_wp_page_template', true );
+	$count               = $wp_query->post_count;
+
+	if ( is_singular( CPT_INITIATIEF ) ) {
+
+		// het is een single voor CPT = CPT_INITIATIEF
+		// daarvoor staat de titel al ok.
+
+	} elseif ( is_post_type_archive( CPT_INITIATIEF ) ) {
+
+		// het totaaloverzicht van alle initiatieven
+		$title = get_the_title( $led_pageid_overview );
+
+	} elseif ( is_tax( CT_INITIATIEFTYPE ) || is_tax( CT_INITIATIEF_PROVINCIE ) ) {
+
+		// het is een overzicht van initiatieven per type of per provincie
+		$term_id = get_queried_object_id();
+		$term    = get_term( $term_id, ( is_tax( CT_INITIATIEFTYPE ) ? CT_INITIATIEFTYPE : CT_INITIATIEF_PROVINCIE ) );
+
+		if ( $term && ! is_wp_error( $term ) ) {
+			$archive_title = $term->name;
+		}
+
+		if ( $count ) {
+			if ( is_tax( CT_INITIATIEF_PROVINCIE ) ) {
+				// voorzetsels, best belangrijk
+				$title = sprintf( _n( '%s initiatief in %s', "%s initiatieven in %s", $count, 'initiatieven-kaart' ), $count, $archive_title );
+			} else {
+				$title = sprintf( _n( '%s initiatief voor %s', "%s initiatieven voor %s", $count, 'initiatieven-kaart' ), $count, $archive_title );
+			}
+		} else {
+			// Niks geen initiatieven niet. Nul, nada, noppes, nihil.
+			// Zeeland en Drenthe, laat van je HO-REN!
+			$title = sprintf( _x( 'Geen initiatieven gevonden voor %s', "Geen initiatieven", 'initiatieven-kaart' ), $archive_title );
+		}
+
+
+	} elseif ( 'page-initiatieven.php' == $page_template ) {
+
+		// het totaaloverzicht van alle initiatieven
+		$title = get_the_title( $led_pageid_overview );
+
+	}
+
+
+	return $title;
+}
