@@ -549,7 +549,7 @@ function led_initiatieven_archive_title( $doreturn = false ) {
 	$count               = $wp_query->post_count;
 	$led_pageid_overview = get_theme_mod( 'customizer_led_pageid_overview' );
 
-	if ( is_post_type_archive( CPT_INITIATIEF ) ) {
+	if ( is_post_type_archive( CPT_INITIATIEF ) || is_page() ) {
 
 		// als er een pagina is aangewezen als overview voor de initiatieven, neem
 		// dan die titel over
@@ -599,6 +599,9 @@ function led_initiatieven_archive_title( $doreturn = false ) {
 			$return              = '<h1>' . sprintf( _x( 'Geen initiatieven gevonden voor %s', "Geen initiatieven", 'initiatieven-kaart' ), $archive_title ) . '</h1>';
 			$archive_description = 'Sorry.';
 		}
+
+	} else {
+		$return = '<h1>' . $archive_title . '</h1>';
 
 	}
 

@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="1a24d279-8cc2-468f-858b-3f0dd79cecc0" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/initiatieven-kaart-public.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/initiatieven-kaart-public.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/class-initiatieven-kaart-public.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/class-initiatieven-kaart-public.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,6 +24,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="vue.rearranger.settings.migration" value="true" />
@@ -31,7 +32,7 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="7b341cf1-028e-4d30-a6d7-4e17bb23d715" name="Default Changelist" comment="" />
+      <changelist id="1a24d279-8cc2-468f-858b-3f0dd79cecc0" name="Default Changelist" comment="" />
       <created>1630500109445</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -39,6 +40,10 @@
       <workItem from="1619085753035" duration="1403000" />
       <workItem from="1619450719760" duration="2487000" />
       <workItem from="1620157001106" duration="2507000" />
+      <workItem from="1634224716502" duration="846000" />
+      <workItem from="1634290472941" duration="317000" />
+      <workItem from="1634631194050" duration="127000" />
+      <workItem from="1635860537390" duration="2347000" />
     </task>
     <servers />
   </component>
@@ -46,9 +51,9 @@
     <option name="version" value="3" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="2211" y="485" width="1006" height="518" key="find.popup" timestamp="1630512024784">
+    <state x="2211" y="485" width="1006" height="518" key="find.popup" timestamp="1635862655799">
       <screen x="1440" y="-275" width="2560" height="1415" />
     </state>
-    <state x="2211" y="485" width="1006" height="518" key="find.popup/0.25.1440.875/1440.-275.2560.1415@1440.-275.2560.1415" timestamp="1630512024784" />
+    <state x="2211" y="485" width="1006" height="518" key="find.popup/0.25.1440.875/1440.-275.2560.1415@1440.-275.2560.1415" timestamp="1635862655799" />
   </component>
 </project>
