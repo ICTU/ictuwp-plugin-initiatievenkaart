@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="112px" height="150px" viewBox="0 0 112 150" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>marker-p</title>
+    <g id="marker-p" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Group" transform="translate(4.000000, 4.000000)" fill="#01689B" fill-rule="nonzero" stroke="#FFFFFF" stroke-linecap="round" stroke-linejoin="round" stroke-opacity="0.94117647" stroke-width="7">
+            <g id="path883">
+                <path d="M103.747296,49.70028 C103.747296,90.914235 51.968146,141.733895 51.968146,141.733895 C51.968146,141.733895 0,90.725245 0,49.70028 C0,20.581568 21.407939,-1.42108547e-14 51.779156,-1.42108547e-14 C82.150376,-1.42108547e-14 103.747296,20.581569 103.747296,49.70028 Z"></path>
+            </g>
+        </g>
+        <path d="M47.17,99.28 L47.17,82.09 C48.97,82.45 50.5,82.63 52.66,82.63 C66.97,82.63 76.78,73.99 76.78,58.33 C76.78,44.02 69.58,37 58.42,37 C53.92,37 49.96,38.53 46.9,40.6 L46.9,37.36 L37,37.81 L37,99.28 L47.17,99.28 Z M52.66,73.9 C50.59,73.9 49.42,73.81 47.17,73.45 L47.17,48.16 C50.23,46.9 52.21,46.45 55.36,46.45 C62.11,46.45 66.34,50.41 66.34,59.14 C66.34,69.31 60.85,73.9 52.66,73.9 Z" id="p" fill="#FFFFFF" fill-rule="nonzero"></path>
+    </g>
+</svg>

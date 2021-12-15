@@ -80,7 +80,8 @@ class Initiatieven_Kaart {
 	 */
 	public function __construct() {
 
-		$this->template_initiatievenpagina = 'page-initiatieven.php';
+		$this->template_initiatievenpagina     = 'page-initiatieven.php';
+		$this->template_innovatieprojectpagina = 'page-innovatieproject.php';
 
 		if ( defined( 'INITIATIEVEN_KAART_VERSION' ) ) {
 			$this->version = INITIATIEVEN_KAART_VERSION;
@@ -92,14 +93,28 @@ class Initiatieven_Kaart {
 			define( 'CPT_INITIATIEF', 'initiatief' );
 		}
 
+		if ( ! defined( 'CPT_PROJECT' ) ) {
+			define( 'CPT_PROJECT', 'innovatieproject' );
+		}
+
 		// taxonomie voor initiatief-type
 		if ( ! defined( 'CT_INITIATIEFTYPE' ) ) {
 			define( 'CT_INITIATIEFTYPE', 'initiatieftype' );
 		}
 
-		// taxonomie voor gemeente voor een initiatief
-		if ( ! defined( 'CT_INITIATIEF_PROVINCIE' ) ) {
-			define( 'CT_INITIATIEF_PROVINCIE', 'provincie' );
+		// taxonomie voor provincie voor een initiatief
+		if ( ! defined( 'CT_PROVINCIE' ) ) {
+			define( 'CT_PROVINCIE', 'provincie' );
+		}
+
+		// taxonomie voor type organisatie voor een innovatieproject
+		if ( ! defined( 'CT_PROJECTORGANISATIE' ) ) {
+			define( 'CT_PROJECTORGANISATIE', 'organisatie' );
+		}
+
+		// taxonomie voor jaar voor een innovatieproject
+		if ( ! defined( 'CT_PROJECTJAAR' ) ) {
+			define( 'CT_PROJECTJAAR', 'jaar-toekenning' );
 		}
 
 		$this->initiatieven_kaart = 'initiatieven-kaart';
@@ -108,7 +123,6 @@ class Initiatieven_Kaart {
 		$this->set_locale();
 		$this->define_admin_hooks();
 		$this->define_public_hooks();
-
 
 
 	}
@@ -259,7 +273,9 @@ class Initiatieven_Kaart {
 	// Pagina-template toevoegen
 	public function add_page_template( $post_templates ) {
 
-		$post_templates[ $this->template_initiatievenpagina ] = _x( 'Initiatieven-pagina', "naam template", 'initiatieven-kaart' );
+		$post_templates[ $this->template_initiatievenpagina ]     = _x( 'Initiatieven-pagina', "naam template", 'initiatieven-kaart' );
+		$post_templates[ $this->template_innovatieprojectpagina ] = _x( 'Innovatiebudget-pagina', "naam template", 'initiatieven-kaart' );
+
 		return $post_templates;
 
 	}
@@ -272,13 +288,18 @@ class Initiatieven_Kaart {
 	 * initiatieftype / provincie, in plaats van maximaal posts_per_page (meestal 10) en de initiatieven
 	 * worden alfabetisch gesorteerd
 	 */
-	public function load_all_initiatieven( $query ) {
+	public function load_all_initiatieven_innovatieprojecten( $query ) {
 
 		global $query_vars;
 
 		if ( ! is_admin() && $query->is_main_query() ) {
 
-			if ( is_post_type_archive( CPT_INITIATIEF ) || ( is_tax( CT_INITIATIEFTYPE ) ) || ( is_tax( CT_INITIATIEF_PROVINCIE ) ) ) {
+			if ( is_post_type_archive( CPT_INITIATIEF ) ||
+			     is_post_type_archive( CPT_PROJECT ) ||
+			     ( is_tax( CT_INITIATIEFTYPE ) ) ||
+			     ( is_tax( CT_PROVINCIE ) ) ||
+			     ( is_tax( CT_PROJECTORGANISATIE ) ) ||
+			     ( is_tax( CT_PROJECTJAAR ) ) ) {
 				// geen pagination voor overzichten van:
 				// - initiatieven
 				// - initiatieven per initiatieftype

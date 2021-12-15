@@ -1,0 +1,338 @@
+[
+    {
+        "key": "group_5f589cb3955cc",
+        "title": "Data-initiatief: locatie en adres",
+        "fields": [
+            {
+                "center_lat": 52.2345283,
+                "center_lng": 5.5206299,
+                "zoom": 7,
+                "key": "field_5f58c08e264c0",
+                "label": "Locatie op de kaart",
+                "name": "openstreet_map",
+                "type": "open_street_map",
+                "instructions": "Kies hier een locatie op de kaart. Als je geen exact adres weet, zoek dan op plaatsnaam.",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "return_format": "raw",
+                "layers": [
+                    "OpenStreetMap.Mapnik"
+                ],
+                "allow_map_layers": 1,
+                "height": 600,
+                "max_markers": ""
+            },
+            {
+                "key": "field_619f59ff89426",
+                "label": "Adres",
+                "name": "",
+                "type": "message",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "message": "Hieronder kun je een adres invoeren. Dit heeft geen invloed op de locatie op de kaart. Het adres wordt apart vermeld onder de lange tekst die het initiatief beschrijft.",
+                "new_lines": "wpautop",
+                "esc_html": 0
+            },
+            {
+                "key": "field_5f80206f9c2f5",
+                "label": "Straatnaam + huisnummer",
+                "name": "locatie_straatnaam_huisnummer",
+                "type": "text",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "placeholder": "",
+                "prepend": "",
+                "append": "",
+                "maxlength": ""
+            },
+            {
+                "key": "field_5f8020c09c2f6",
+                "label": "Postcode",
+                "name": "locatie_postcode",
+                "type": "text",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "placeholder": "",
+                "prepend": "",
+                "append": "",
+                "maxlength": ""
+            },
+            {
+                "key": "field_5f87fec245e44",
+                "label": "Plaatsnaam",
+                "name": "locatie_plaatsnaam",
+                "type": "text",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "placeholder": "",
+                "prepend": "",
+                "append": "",
+                "maxlength": ""
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "post_type",
+                    "operator": "==",
+                    "value": "initiatief"
+                }
+            ]
+        ],
+        "menu_order": 0,
+        "position": "acf_after_title",
+        "style": "default",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "hide_on_screen": [
+            "categories"
+        ],
+        "active": true,
+        "description": ""
+    },
+    {
+        "key": "group_5f801513dfa08",
+        "title": "Icoontje type data-initiatief",
+        "fields": [
+            {
+                "key": "field_5f801544f2817",
+                "label": "Welk icoontje hoort hierbij?",
+                "name": "initiatief_type_icon",
+                "type": "radio",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "choices": {
+                    "community": "Community",
+                    "lab": "Lab",
+                    "onbekend": "Onbekend",
+                    "portaal": "Portaal",
+                    "strategie": "Strategie",
+                    "visualisatie": "Visualisatie"
+                },
+                "allow_null": 0,
+                "other_choice": 0,
+                "default_value": "onbekend",
+                "layout": "vertical",
+                "return_format": "value",
+                "save_other_choice": 0
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "taxonomy",
+                    "operator": "==",
+                    "value": "initiatieftype"
+                }
+            ]
+        ],
+        "menu_order": 0,
+        "position": "normal",
+        "style": "default",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "hide_on_screen": "",
+        "active": true,
+        "description": "",
+        "show_in_rest": 0
+    },
+    {
+        "key": "group_619f571e82dff",
+        "title": "Innovatieproject: regievoerder, partners, locatie, adres",
+        "fields": [
+            {
+                "key": "field_619f5794ca13d",
+                "label": "Regievoerder",
+                "name": "innovatieproject_regievoerder",
+                "type": "text",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "placeholder": "",
+                "prepend": "",
+                "append": "",
+                "maxlength": ""
+            },
+            {
+                "key": "field_619f5750d729e",
+                "label": "Partners",
+                "name": "innovatieproject_partners",
+                "type": "text",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "placeholder": "",
+                "prepend": "",
+                "append": "",
+                "maxlength": ""
+            },
+            {
+                "center_lat": 52.2345283,
+                "center_lng": 5.5206299,
+                "zoom": 7,
+                "key": "field_619f571e89aa0",
+                "label": "Locatie op de kaart",
+                "name": "openstreet_map",
+                "type": "open_street_map",
+                "instructions": "Kies hier een locatie op de kaart. Als je geen exact adres weet, zoek dan op plaatsnaam.",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "return_format": "raw",
+                "layers": [
+                    "OpenStreetMap.Mapnik"
+                ],
+                "allow_map_layers": 1,
+                "height": 600,
+                "max_markers": ""
+            },
+            {
+                "key": "field_619f5a89a82d2",
+                "label": "Adres",
+                "name": "",
+                "type": "message",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "message": "Hieronder kun je een adres invoeren. Dit heeft geen invloed op de locatie op de kaart. Het adres wordt apart vermeld onder de lange tekst die het project beschrijft.",
+                "new_lines": "wpautop",
+                "esc_html": 0
+            },
+            {
+                "key": "field_619f571e89abc",
+                "label": "Straatnaam + huisnummer",
+                "name": "locatie_straatnaam_huisnummer",
+                "type": "text",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "placeholder": "",
+                "prepend": "",
+                "append": "",
+                "maxlength": ""
+            },
+            {
+                "key": "field_619f571e89ad6",
+                "label": "Postcode",
+                "name": "locatie_postcode",
+                "type": "text",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "placeholder": "",
+                "prepend": "",
+                "append": "",
+                "maxlength": ""
+            },
+            {
+                "key": "field_619f571e89af2",
+                "label": "Plaatsnaam",
+                "name": "locatie_plaatsnaam",
+                "type": "text",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "placeholder": "",
+                "prepend": "",
+                "append": "",
+                "maxlength": ""
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "post_type",
+                    "operator": "==",
+                    "value": "innovatieproject"
+                }
+            ]
+        ],
+        "menu_order": 0,
+        "position": "acf_after_title",
+        "style": "default",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "hide_on_screen": [
+            "categories"
+        ],
+        "active": true,
+        "description": ""
+    }
+]

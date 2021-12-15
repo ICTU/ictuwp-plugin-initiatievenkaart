@@ -1,19 +1,19 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Initiatieven Kaart voor LED (digitaleoverheid.nl)\n"
-"POT-Creation-Date: 2021-02-24 10:38+0100\n"
-"PO-Revision-Date: 2021-09-01 17:42+0200\n"
+"POT-Creation-Date: 2021-12-07 13:55+0100\n"
+"PO-Revision-Date: 2021-12-07 13:58+0100\n"
 "Last-Translator: Paul van Buuren <poedit@wbvb.nl>\n"
 "Language-Team: Paul van Buuren <poedit@wbvb.nl>\n"
 "Language: nl_NL\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 3.0\n"
 "X-Poedit-Basepath: ..\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-Flags-xgettext: --add-comments=translators:\n"
-"X-Poedit-WPHeader: initiatieven-kaart.php\n"
+"X-Poedit-WPHeader: ictuwp-plugin-initiatievenkaart.php\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
 "esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;"
@@ -21,323 +21,593 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.min.js\n"
 
-#: includes/class-initiatieven-kaart.php:262
-#, fuzzy
-#| msgctxt "Archive initiatieven"
-#| msgid "Initiatieven"
-msgctxt "naam template"
-msgid "Initiatieven-pagina"
-msgstr "Initiatieven"
-
-#: initiatieven-kaart.php:146 initiatieven-kaart.php:148
+#: ictuwp-plugin-initiatievenkaart.php:170
+#: ictuwp-plugin-initiatievenkaart.php:172
 msgctxt "post type"
 msgid "Initiatieven"
-msgstr ""
+msgstr "Data-initiatieven"
 
-#: initiatieven-kaart.php:147 initiatieven-kaart.php:149
+#: ictuwp-plugin-initiatievenkaart.php:171
+#: ictuwp-plugin-initiatievenkaart.php:173
 msgctxt "post type"
 msgid "Initiatief"
-msgstr ""
+msgstr "Data-initiatief"
 
-#: initiatieven-kaart.php:150
+#: ictuwp-plugin-initiatievenkaart.php:174
 msgctxt "post type"
 msgid "Overzicht initiatieven"
 msgstr "Overzicht initiatieven"
 
-#: initiatieven-kaart.php:151
+#: ictuwp-plugin-initiatievenkaart.php:175
 msgctxt "post type"
 msgid "Eigenschappen initiatief"
 msgstr ""
 
-#: initiatieven-kaart.php:152
+#: ictuwp-plugin-initiatievenkaart.php:176
+#: ictuwp-plugin-initiatievenkaart.php:289
 msgctxt "post type"
 msgid "Parent Map:"
 msgstr ""
 
-#: initiatieven-kaart.php:153
+#: ictuwp-plugin-initiatievenkaart.php:177
 msgctxt "post type"
 msgid "Alle initiatieven"
 msgstr ""
 
-#: initiatieven-kaart.php:154
+#: ictuwp-plugin-initiatievenkaart.php:178
 msgctxt "post type"
 msgid "Initiatief toevoegen"
 msgstr ""
 
-#: initiatieven-kaart.php:155
+#: ictuwp-plugin-initiatievenkaart.php:179
+#: ictuwp-plugin-initiatievenkaart.php:292
 msgctxt "post type"
 msgid "Toevoegen"
 msgstr ""
 
-#: initiatieven-kaart.php:156
+#: ictuwp-plugin-initiatievenkaart.php:180
 msgctxt "post type"
 msgid "Nieuw initiatief"
-msgstr ""
+msgstr "Nieuw data-initiatief"
 
-#: initiatieven-kaart.php:157
+#: ictuwp-plugin-initiatievenkaart.php:181
 msgctxt "post type"
 msgid "Bewerk initiatief"
-msgstr ""
+msgstr "Bewerk data-initiatief"
 
-#: initiatieven-kaart.php:158
+#: ictuwp-plugin-initiatievenkaart.php:182
 msgctxt "post type"
 msgid "Update initiatief"
-msgstr ""
+msgstr "Update data-initiatief"
 
-#: initiatieven-kaart.php:159
+#: ictuwp-plugin-initiatievenkaart.php:183
 msgctxt "post type"
 msgid "Bekijk initiatief"
-msgstr ""
+msgstr "Bekijk initiatief"
 
-#: initiatieven-kaart.php:160
+#: ictuwp-plugin-initiatievenkaart.php:184
+#: ictuwp-plugin-initiatievenkaart.php:297
 msgctxt "post type"
 msgid "Bekijk initiatieven"
-msgstr ""
+msgstr "Bekijk initiatieven"
 
-#: initiatieven-kaart.php:161
+#: ictuwp-plugin-initiatievenkaart.php:185
 msgctxt "post type"
 msgid "Zoek initiatief"
-msgstr ""
+msgstr "Zoek initiatief"
 
-#: initiatieven-kaart.php:162
+#: ictuwp-plugin-initiatievenkaart.php:186
+#: ictuwp-plugin-initiatievenkaart.php:299
 msgctxt "post type"
 msgid "Not found"
 msgstr ""
 
-#: initiatieven-kaart.php:163
+#: ictuwp-plugin-initiatievenkaart.php:187
+#: ictuwp-plugin-initiatievenkaart.php:300
 msgctxt "post type"
 msgid "Not found in Trash"
 msgstr ""
 
-#: initiatieven-kaart.php:164
+#: ictuwp-plugin-initiatievenkaart.php:188
+#: ictuwp-plugin-initiatievenkaart.php:301
 msgctxt "post type"
 msgid "Featured Image"
 msgstr ""
 
-#: initiatieven-kaart.php:165
+#: ictuwp-plugin-initiatievenkaart.php:189
+#: ictuwp-plugin-initiatievenkaart.php:302
 msgctxt "post type"
 msgid "Set featured image"
 msgstr ""
 
-#: initiatieven-kaart.php:166
+#: ictuwp-plugin-initiatievenkaart.php:190
+#: ictuwp-plugin-initiatievenkaart.php:303
 msgctxt "post type"
 msgid "Remove featured image"
 msgstr ""
 
-#: initiatieven-kaart.php:167
+#: ictuwp-plugin-initiatievenkaart.php:191
+#: ictuwp-plugin-initiatievenkaart.php:304
 msgctxt "post type"
 msgid "Use as featured image"
 msgstr ""
 
-#: initiatieven-kaart.php:168
+#: ictuwp-plugin-initiatievenkaart.php:192
+#: ictuwp-plugin-initiatievenkaart.php:305
 msgctxt "post type"
 msgid "Insert into Map"
 msgstr ""
 
-#: initiatieven-kaart.php:169
+#: ictuwp-plugin-initiatievenkaart.php:193
 msgctxt "post type"
 msgid "Uploaded to this initiatief"
 msgstr ""
 
-#: initiatieven-kaart.php:170
+#: ictuwp-plugin-initiatievenkaart.php:194
+#: ictuwp-plugin-initiatievenkaart.php:307
 msgctxt "post type"
 msgid "Map list"
 msgstr ""
 
-#: initiatieven-kaart.php:171
+#: ictuwp-plugin-initiatievenkaart.php:195
+#: ictuwp-plugin-initiatievenkaart.php:308
 msgctxt "post type"
 msgid "Maps list navigation"
 msgstr ""
 
-#: initiatieven-kaart.php:172
+#: ictuwp-plugin-initiatievenkaart.php:196
+#: ictuwp-plugin-initiatievenkaart.php:309
 msgctxt "post type"
 msgid "Filter initiatief list"
 msgstr ""
 
-#: initiatieven-kaart.php:193
+#: ictuwp-plugin-initiatievenkaart.php:217
+#: public/class-initiatieven-kaart-public.php:217
 msgctxt "taxonomy"
 msgid "Type initatief"
-msgstr ""
+msgstr "Type initatief"
 
-#: initiatieven-kaart.php:194
+#: ictuwp-plugin-initiatievenkaart.php:218
 msgctxt "taxonomy singular name"
 msgid "Initatieftype"
 msgstr ""
 
-#: initiatieven-kaart.php:195
+#: ictuwp-plugin-initiatievenkaart.php:219
 msgctxt "taxonomy"
 msgid "Search initatieftype"
 msgstr "Zoek initatieftype"
 
-#: initiatieven-kaart.php:196
+#: ictuwp-plugin-initiatievenkaart.php:220
 msgctxt "taxonomy"
 msgid "All initatieftypes"
 msgstr "Alle initatieftypes"
 
-#: initiatieven-kaart.php:197
+#: ictuwp-plugin-initiatievenkaart.php:221
 msgctxt "taxonomy"
 msgid "Parent initatieftype"
 msgstr ""
 
-#: initiatieven-kaart.php:198
+#: ictuwp-plugin-initiatievenkaart.php:222
 msgctxt "taxonomy"
 msgid "Parent initatieftype:"
 msgstr ""
 
-#: initiatieven-kaart.php:199
+#: ictuwp-plugin-initiatievenkaart.php:223
 msgctxt "taxonomy"
 msgid "Edit initatieftype"
 msgstr "Bewerk initatieftype"
 
-#: initiatieven-kaart.php:200
+#: ictuwp-plugin-initiatievenkaart.php:224
 msgctxt "taxonomy"
 msgid "Update initatieftype"
 msgstr "Initatieftype bijwerken"
 
-#: initiatieven-kaart.php:201
+#: ictuwp-plugin-initiatievenkaart.php:225
 msgctxt "taxonomy"
 msgid "Add New initatieftype"
 msgstr "Toevoegen"
 
-#: initiatieven-kaart.php:202
+#: ictuwp-plugin-initiatievenkaart.php:226
 msgctxt "taxonomy"
 msgid "New initatieftype Name"
 msgstr ""
 
-#: initiatieven-kaart.php:203
+#: ictuwp-plugin-initiatievenkaart.php:227
 msgctxt "taxonomy"
 msgid "Initatieftype"
 msgstr ""
 
-#: initiatieven-kaart.php:219 initiatieven-kaart.php:229
+#: ictuwp-plugin-initiatievenkaart.php:243
+#: ictuwp-plugin-initiatievenkaart.php:253
 msgctxt "taxonomy"
 msgid "Provincie"
 msgstr ""
 
-#: initiatieven-kaart.php:220
+#: ictuwp-plugin-initiatievenkaart.php:244
 msgctxt "taxonomy singular name"
 msgid "Provincie"
 msgstr ""
 
-#: initiatieven-kaart.php:221
+#: ictuwp-plugin-initiatievenkaart.php:245
 msgctxt "taxonomy"
 msgid "Search provincie"
 msgstr "Zoek provincie"
 
-#: initiatieven-kaart.php:222
+#: ictuwp-plugin-initiatievenkaart.php:246
 msgctxt "taxonomy"
 msgid "All provincies"
 msgstr ""
 
-#: initiatieven-kaart.php:223
+#: ictuwp-plugin-initiatievenkaart.php:247
 msgctxt "taxonomy"
 msgid "Parent provincie"
 msgstr ""
 
-#: initiatieven-kaart.php:224
+#: ictuwp-plugin-initiatievenkaart.php:248
 msgctxt "taxonomy"
 msgid "Parent provincie:"
 msgstr ""
 
-#: initiatieven-kaart.php:225
+#: ictuwp-plugin-initiatievenkaart.php:249
 msgctxt "taxonomy"
 msgid "Edit provincie"
 msgstr ""
 
-#: initiatieven-kaart.php:226
+#: ictuwp-plugin-initiatievenkaart.php:250
 msgctxt "taxonomy"
 msgid "Update provincie"
 msgstr "Provincie bijwerken"
 
-#: initiatieven-kaart.php:227
+#: ictuwp-plugin-initiatievenkaart.php:251
 msgctxt "taxonomy"
 msgid "Add New provincie"
 msgstr "Add New provincie"
 
-#: initiatieven-kaart.php:228
+#: ictuwp-plugin-initiatievenkaart.php:252
 msgctxt "taxonomy"
 msgid "New provincie Name"
 msgstr ""
 
-#: initiatieven-kaart.php:334
-msgctxt "Label type initiatief"
-msgid "Type"
+#: ictuwp-plugin-initiatievenkaart.php:283
+#: ictuwp-plugin-initiatievenkaart.php:285
+msgctxt "post type"
+msgid "Innovatieprojecten"
+msgstr "Innovatie&shy;projecten"
+
+#: ictuwp-plugin-initiatievenkaart.php:284
+#: ictuwp-plugin-initiatievenkaart.php:286
+msgctxt "post type"
+msgid "Innovatieproject"
 msgstr ""
 
-#: initiatieven-kaart.php:409
-#, fuzzy
-#| msgctxt "Archive initiatieven"
-#| msgid "Initiatieven"
-msgctxt "customizer menu"
-msgid "Initiatievenkaart"
-msgstr "Initiatieven"
+#: ictuwp-plugin-initiatievenkaart.php:287
+msgctxt "post type"
+msgid "Overzicht innovatieprojecten"
+msgstr "Overzicht innovatieprojecten"
 
-#: initiatieven-kaart.php:411
-msgctxt "customizer menu"
-msgid "Instellingen voor de initiatievenkaart."
+#: ictuwp-plugin-initiatievenkaart.php:288
+msgctxt "post type"
+msgid "Eigenschappen innovatieproject"
 msgstr ""
 
-#: initiatieven-kaart.php:424
+#: ictuwp-plugin-initiatievenkaart.php:290
+msgctxt "post type"
+msgid "Alle innovatieprojecten"
+msgstr "Alle projecten"
+
+#: ictuwp-plugin-initiatievenkaart.php:291
+msgctxt "post type"
+msgid "Innovatieproject toevoegen"
+msgstr ""
+
+#: ictuwp-plugin-initiatievenkaart.php:293
+msgctxt "post type"
+msgid "Nieuw innovatieproject"
+msgstr "Nieuw innovatieproject"
+
+#: ictuwp-plugin-initiatievenkaart.php:294
+msgctxt "post type"
+msgid "Bewerk innovatieproject"
+msgstr "Bewerk innovatieproject"
+
+#: ictuwp-plugin-initiatievenkaart.php:295
+msgctxt "post type"
+msgid "Update innovatieproject"
+msgstr "Update innovatieproject"
+
+#: ictuwp-plugin-initiatievenkaart.php:296
+msgctxt "post type"
+msgid "Bekijk innovatieproject"
+msgstr "Bekijk innovatieproject"
+
+#: ictuwp-plugin-initiatievenkaart.php:298
+msgctxt "post type"
+msgid "Zoek innovatieproject"
+msgstr "Zoek innovatieproject"
+
+#: ictuwp-plugin-initiatievenkaart.php:306
+msgctxt "post type"
+msgid "Uploaded to this innovatieproject"
+msgstr ""
+
+#: ictuwp-plugin-initiatievenkaart.php:331
+#: ictuwp-plugin-initiatievenkaart.php:341
+#: public/class-initiatieven-kaart-public.php:220
+msgctxt "taxonomy"
+msgid "Type organisatie"
+msgstr "Type organisatie"
+
+#: ictuwp-plugin-initiatievenkaart.php:332
+msgctxt "taxonomy singular name"
+msgid "Organisatie"
+msgstr "Organisatie"
+
+#: ictuwp-plugin-initiatievenkaart.php:333
+msgctxt "taxonomy"
+msgid "Search organisatie"
+msgstr "Zoek organisatie"
+
+#: ictuwp-plugin-initiatievenkaart.php:334
+msgctxt "taxonomy"
+msgid "All organisaties"
+msgstr "Alle organisaties"
+
+#: ictuwp-plugin-initiatievenkaart.php:335
+msgctxt "taxonomy"
+msgid "Parent organisatie"
+msgstr ""
+
+#: ictuwp-plugin-initiatievenkaart.php:336
+msgctxt "taxonomy"
+msgid "Parent organisatie:"
+msgstr ""
+
+#: ictuwp-plugin-initiatievenkaart.php:337
+msgctxt "taxonomy"
+msgid "Edit organisatie"
+msgstr "Bewerk organisaties"
+
+#: ictuwp-plugin-initiatievenkaart.php:338
+msgctxt "taxonomy"
+msgid "Update organisatie"
+msgstr "Update organisatie"
+
+#: ictuwp-plugin-initiatievenkaart.php:339
+msgctxt "taxonomy"
+msgid "Add New organisatie"
+msgstr "organisatie toevoegen"
+
+#: ictuwp-plugin-initiatievenkaart.php:340
+msgctxt "taxonomy"
+msgid "New organisatie Name"
+msgstr ""
+
+#: ictuwp-plugin-initiatievenkaart.php:357
+#: ictuwp-plugin-initiatievenkaart.php:367
+msgctxt "taxonomy"
+msgid "Jaar toekenning"
+msgstr ""
+
+#: ictuwp-plugin-initiatievenkaart.php:358
+msgctxt "taxonomy singular name"
+msgid "Jaar toekenning"
+msgstr ""
+
+#: ictuwp-plugin-initiatievenkaart.php:359
+msgctxt "taxonomy"
+msgid "Search jaar"
+msgstr ""
+
+#: ictuwp-plugin-initiatievenkaart.php:360
+msgctxt "taxonomy"
+msgid "Alle jaren"
+msgstr ""
+
+#: ictuwp-plugin-initiatievenkaart.php:361
+msgctxt "taxonomy"
+msgid "Parent jaar"
+msgstr ""
+
+#: ictuwp-plugin-initiatievenkaart.php:362
+msgctxt "taxonomy"
+msgid "Parent jaar:"
+msgstr ""
+
+#: ictuwp-plugin-initiatievenkaart.php:363
+msgctxt "taxonomy"
+msgid "Edit jaar"
+msgstr ""
+
+#: ictuwp-plugin-initiatievenkaart.php:364
+msgctxt "taxonomy"
+msgid "Update jaar"
+msgstr ""
+
+#: ictuwp-plugin-initiatievenkaart.php:365
+msgctxt "taxonomy"
+msgid "Add New jaar"
+msgstr "Add New jaar"
+
+#: ictuwp-plugin-initiatievenkaart.php:366
+msgctxt "taxonomy"
+msgid "New jaar Name"
+msgstr ""
+
+#: ictuwp-plugin-initiatievenkaart.php:602
+msgctxt "customizer menu"
+msgid "Initiatievenkaart / innovatie-kaart"
+msgstr "Initiatievenkaart / innovatie-kaart"
+
+#: ictuwp-plugin-initiatievenkaart.php:604
+msgctxt "customizer menu"
+msgid "Instellingen voor de pagina met lijst van initiatieven."
+msgstr ""
+
+#: ictuwp-plugin-initiatievenkaart.php:615
+msgctxt "customizer menu"
+msgid "Tekst vóór de data-initiatiefkaart"
+msgstr ""
+
+#: ictuwp-plugin-initiatievenkaart.php:616
+msgctxt "customizer menu"
+msgid "Tekst die <em>direct voor</em> de data-initiatiefkaart staat"
+msgstr ""
+
+#: ictuwp-plugin-initiatievenkaart.php:626
+msgctxt "customizer menu"
+msgid "Tekst ná de de data-initiatiefkaart"
+msgstr ""
+
+#: ictuwp-plugin-initiatievenkaart.php:627
+#: ictuwp-plugin-initiatievenkaart.php:664
+msgctxt "customizer menu"
+msgid "Tekst die <em>direct na</em> de data-initiatiefkaart staat"
+msgstr ""
+
+#: ictuwp-plugin-initiatievenkaart.php:638
 msgctxt "customizer menu"
 msgid "Pagina met alle initiatieven"
 msgstr ""
 
-#: initiatieven-kaart.php:425
+#: ictuwp-plugin-initiatievenkaart.php:639
 msgctxt "customizer menu"
 msgid ""
 "In het kruimelpad en in de URL voor een initiatief zal deze pagina "
 "terugkomen."
 msgstr ""
 
-#: initiatieven-kaart.php:496
+#: ictuwp-plugin-initiatievenkaart.php:652
+msgctxt "customizer menu"
+msgid "Tekst vóór de innovatie-kaart"
+msgstr ""
+
+#: ictuwp-plugin-initiatievenkaart.php:653
+msgctxt "customizer menu"
+msgid "Tekst die <em>direct voor</em> de innovatie-kaart staat"
+msgstr ""
+
+#: ictuwp-plugin-initiatievenkaart.php:663
+msgctxt "customizer menu"
+msgid "Tekst ná de innovatie-kaart"
+msgstr ""
+
+#: ictuwp-plugin-initiatievenkaart.php:675
+msgctxt "customizer menu"
+msgid "Pagina met alle innovatie-projecten"
+msgstr "Pagina met alle innovatie-projecten"
+
+#: ictuwp-plugin-initiatievenkaart.php:676
+msgctxt "customizer menu"
+msgid ""
+"In het kruimelpad en in de URL voor een innovatie-project zal deze pagina "
+"terugkomen."
+msgstr ""
+
+#: ictuwp-plugin-initiatievenkaart.php:848
 msgctxt "Archive initiatieven"
 msgid "Initiatieven"
-msgstr "Initiatieven"
+msgstr "Data-initiatieven"
 
-#: initiatieven-kaart.php:542
+#: ictuwp-plugin-initiatievenkaart.php:927
+#: ictuwp-plugin-initiatievenkaart.php:1288
 #, php-format
 msgid "%s initiatief in %s"
 msgid_plural "%s initiatieven in %s"
 msgstr[0] ""
 msgstr[1] ""
 
-#: initiatieven-kaart.php:544
+#: ictuwp-plugin-initiatievenkaart.php:929
+#: ictuwp-plugin-initiatievenkaart.php:1290
 #, php-format
 msgid "%s initiatief voor %s"
 msgid_plural "%s initiatieven voor %s"
 msgstr[0] ""
 msgstr[1] ""
 
-#: initiatieven-kaart.php:582
+#: ictuwp-plugin-initiatievenkaart.php:934
+#: ictuwp-plugin-initiatievenkaart.php:1295
+#, php-format
+msgctxt "Geen initiatieven"
+msgid "Geen initiatieven gevonden voor %s"
+msgstr ""
+
+#: ictuwp-plugin-initiatievenkaart.php:971
 msgid "Andere initiatieftypes"
 msgstr "Andere initiatieftypes"
 
-#: initiatieven-kaart.php:585
+#: ictuwp-plugin-initiatievenkaart.php:974
 msgid "Andere provincies"
 msgstr ""
 
-#: initiatieven-kaart.php:588
+#: ictuwp-plugin-initiatievenkaart.php:977
+msgid "Andere organisaties"
+msgstr "Andere organisaties"
+
+#: ictuwp-plugin-initiatievenkaart.php:980
+msgid "Andere jaren"
+msgstr ""
+
+#: ictuwp-plugin-initiatievenkaart.php:983
+msgid "Type organisaties"
+msgstr "Type organisaties"
+
+#: ictuwp-plugin-initiatievenkaart.php:985
+msgid "Jaren"
+msgstr ""
+
+#: ictuwp-plugin-initiatievenkaart.php:988
 msgid "Initiatieftypes"
 msgstr "Initiatieftypes"
 
-#: initiatieven-kaart.php:590
+#: ictuwp-plugin-initiatievenkaart.php:990
 msgid "Provincies"
 msgstr ""
 
-#: templates/single-initiatief.php:97
+#: includes/class-initiatieven-kaart.php:276
+msgctxt "naam template"
+msgid "Initiatieven-pagina"
+msgstr "Initiatieven-pagina"
+
+#: includes/class-initiatieven-kaart.php:277
+msgctxt "naam template"
+msgid "Innovatiebudget-pagina"
+msgstr "Innovatiebudget-pagina"
+
+#: templates/single-initiatief.php:94
 msgctxt "Label type initiatief"
 msgid "Type initiatief"
-msgstr "Type initiatief"
+msgstr "Type data-initiatief"
 
-#: templates/single-initiatief.php:121
+#: templates/single-initiatief.php:118
+#: templates/single-innovatieproject.php:141
 msgctxt "Single initiatief"
 msgid "Adres"
 msgstr ""
 
-#: templates/single-initiatief.php:141
-msgctxt "Single initiatief"
-msgid "Contact"
+#: templates/single-innovatieproject.php:77
+msgctxt "Label type organisatie"
+msgid "Jaar"
 msgstr ""
+
+#: templates/single-innovatieproject.php:88
+msgctxt "Label type organisatie"
+msgid "Jaren"
+msgstr ""
+
+#: templates/single-innovatieproject.php:104
+msgctxt "Label type organisatie"
+msgid "Regievoerder"
+msgstr ""
+
+#: templates/single-innovatieproject.php:108
+msgctxt "Label type organisatie"
+msgid "Partners"
+msgstr ""
+
+#: templates/single-innovatieproject.php:112
+msgctxt "Label type organisatie"
+msgid "Type organisatie"
+msgstr "Type organisatie"
 
 #. Plugin Name of the plugin/theme
 msgid "Initiatieven Kaart voor LED (digitaleoverheid.nl)"

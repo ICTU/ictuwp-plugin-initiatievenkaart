@@ -13,7 +13,7 @@ if ( function_exists( 'genesis' ) ) {
 	remove_action( 'genesis_entry_header', 'genesis_post_info', 12 );
 
 	// extra informatie toevoegen
-	add_action( 'genesis_after_entry_content', 'led_initiatief_single_info' );
+	add_action( 'genesis_after_entry_content', 'led_project_single_info' );
 
 	// make it so
 	genesis();
@@ -30,7 +30,7 @@ if ( function_exists( 'genesis' ) ) {
 
 			<h1><?php the_title() ?></h1>
 			<?php the_content() ?>
-			<?php echo led_initiatief_single_info() ?>
+			<?php echo led_project_single_info() ?>
 
 		</div><!-- #content -->
 	</div><!-- #primary -->
@@ -47,53 +47,76 @@ if ( function_exists( 'genesis' ) ) {
 
 //========================================================================================================
 
-function led_initiatief_single_info( $doreturn = false ) {
+function led_project_single_info( $doreturn = false ) {
 	$bla = '';
 	global $post;
 
-	$initiatieftype  = '';
+	$desciptionlist  = '';
 	$return          = '';
-	$provincie       = array();
-	$initiatieficons = led_get_initiatieficons();
-	$initatieftypes  = get_the_terms( get_the_id(), CT_INITIATIEFTYPE );
+	$jaren           = array();
+	$organisatietype = get_the_terms( get_the_id(), CT_PROJECTORGANISATIE );
 
 	// haal de waarden op uit de ACF-velden
 	$locationField         = get_field( 'openstreet_map' );
 	$straatnaam_huisnummer = get_field( 'locatie_straatnaam_huisnummer' );
 	$locatie_postcode      = get_field( 'locatie_postcode' );
+	$regievoerder          = get_field( 'innovatieproject_regievoerder' );
+	$partners              = get_field( 'innovatieproject_partners' );
 	$plaatsnaam            = get_field( 'locatie_plaatsnaam' );
 
-	// bepalen aan welke provincie(s) dit initiatief hangt
-	$terms = get_the_terms( get_the_id(), CT_PROVINCIE );
-	if ( ! empty( $terms ) && ! is_wp_error( $terms ) ) {
-		foreach ( $terms as $term ) {
-			$provincie[] = $term->name;
-		}
-	}
 
-	if ( $initatieftypes && ! is_wp_error( $initatieftypes ) ) :
+	if ( $organisatietype && ! is_wp_error( $organisatietype ) ) :
 		// check in welk initiatieftype dit initatieftype zit
 		// aan dit type hangt o.m. het icoontje
 		// NB op dit moment is het praktisch mogelijk om een initiatief aan
 		// MEERDERE initiatieftypes te hangen
 
-		$classes = array();
-		$labels  = '';
+		$classes               = array();
+		$organisatietype_items = '';
+		$jaren_items           = '';
+		$jaren_label           = _x( 'Jaar', 'Label type organisatie', 'initiatieven-kaart' );
 
-		foreach ( $initatieftypes as $term ) {
-
-			// het icoontje dat bij dit initatieftype hoort, staat in de array $initiatieficons
-			$classes[ $term->slug ] = $initiatieficons[ $term->slug ]['slug'];
-			$labels                 .= '<dd class="' . $term->slug . '">' . $term->name . '</dd>';
+		foreach ( $organisatietype as $term ) {
+			$organisatietype_items .= '<dd class="' . $term->slug . '">' . $term->name . '</dd>';
 		}
 
-		if ( $labels ) {
-			// als er iets aanwezig is voor de taxonomy initatietype,
-			// dan zetten we alle waarden daarvoor in een <dl>
-			$initiatieftype = '<dl class="initiatieftype ' . join( " ", $classes ) . '">';
-			$initiatieftype .= '<dt>' . _x( 'Type initiatief', 'Label type initiatief', 'initiatieven-kaart' ) . '</dt>';
-			$initiatieftype .= $labels;
-			$initiatieftype .= '</dl>';
+		// bepalen aan welke provincie(s) dit initiatief hangt
+		$terms = get_the_terms( get_the_id(), CT_PROJECTJAAR );
+		if ( ! empty( $terms ) && ! is_wp_error( $terms ) ) {
+			$counter = 0;
+			if ( count( $terms ) > 1 ) {
+				$jaren_label = _x( 'Jaren', 'Label type organisatie', 'initiatieven-kaart' );
+			}
+			$jaren_items .= '<dd class="' . $term->slug . '">';
+			foreach ( $terms as $term ) {
+				$counter++;
+				if ( $counter > 1) {
+					$jaren_items .= ', ';
+				}
+				$jaren_items .= $term->name;
+			}
+			$jaren_items .= '</dd>';
+		}
+
+		if ( $organisatietype_items || $jaren_items || $regievoerder || $partners ) {
+			$desciptionlist = '<dl class="new">';
+			if ( $regievoerder ) {
+				$desciptionlist .= '<dt>' . _x( 'Regievoerder', 'Label type organisatie', 'initiatieven-kaart' ) . '</dt>';
+				$desciptionlist .= '<dd>' . $regievoerder . '</dd>';
+			}
+			if ( $partners ) {
+				$desciptionlist .= '<dt>' . _x( 'Partners', 'Label type organisatie', 'initiatieven-kaart' ) . '</dt>';
+				$desciptionlist .= '<dd>' . $partners . '</dd>';
+			}
+			if ( $organisatietype_items ) {
+				$desciptionlist .= '<dt>' . _x( 'Type organisatie', 'Label type organisatie', 'initiatieven-kaart' ) . '</dt>';
+				$desciptionlist .= $organisatietype_items;
+			}
+			if ( $jaren_items ) {
+				$desciptionlist .= '<dt>' . $jaren_label . '</dt>';
+				$desciptionlist .= $jaren_items;
+			}
+			$desciptionlist .= '</dl>';
 
 		}
 
@@ -108,12 +131,12 @@ function led_initiatief_single_info( $doreturn = false ) {
 	}
 
 	// Initiatieftype
-	if ( $initiatieftype ) {
-		$return .= sprintf( '%s', $initiatieftype );
+	if ( $desciptionlist ) {
+		$return .= sprintf( '%s', $desciptionlist );
 	}
 
 	// Adresgegevens
-	if ( $provincie || $straatnaam_huisnummer || $plaatsnaam || $locatie_postcode ) {
+	if ( $jaren || $straatnaam_huisnummer || $plaatsnaam || $locatie_postcode ) {
 		// TODO: schema markup voor locatie
 		$return .= '<h2>' . _x( 'Adres', 'Single initiatief', 'initiatieven-kaart' ) . '</h2>';
 		$adres  = '';
@@ -126,8 +149,8 @@ function led_initiatief_single_info( $doreturn = false ) {
 		if ( $plaatsnaam ) {
 			$adres .= ( ( $adres ) ? wp_strip_all_tags( $plaatsnaam ) . '<br>' : wp_strip_all_tags( $plaatsnaam ) );
 		}
-		if ( $provincie ) {
-			$adres .= ( ( $adres ) ? join( ", ", $provincie ) . '<br>' : join( ", ", $provincie ) );
+		if ( $jaren ) {
+			$adres .= ( ( $adres ) ? join( ", ", $jaren ) . '<br>' : join( ", ", $jaren ) );
 		}
 		$return .= '<p>' . $adres . '</p>';
 	}
