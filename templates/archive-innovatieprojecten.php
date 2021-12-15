@@ -67,7 +67,7 @@ function led_initiatieven_archive_list( $doreturn = false ) {
 
 		while ( have_posts() ) : the_post();
 
-			$return .= led_get_list_item_archive( $post, $initiatieficons );
+			$return .= led_get_list_item_archive( $post, $initiatieficons, CT_PROJECTORGANISATIE );
 
 		endwhile;
 

@@ -29,6 +29,7 @@ Authors:
         "portaal": "Portaal",
         "strategie": "Strategie",
         "visualisatie": "Visualisatie",
+        "gemeente": "Gemeente",
       }
       // icon (wxh): 30 x 40
       // best is to make nice numbers for ratio 3:4
@@ -60,7 +61,7 @@ Authors:
           // PvB: ik heb de iconUrl aangepast en ervoor gezorgd dat der geen 404 meer
           // optreedt.
           // TB: ik heb het nog iets verder aangepast: rekening houden met een langer pad (bij mij draait deze installatie bijvoorbeeld op http://...domein../led/). De siteurl wordt door WP weggeschreven in een javascript object via de public class: public/class-initiatieven-kaart-public.php
-          shadowUrl: `${Utils.siteurl}/wp-content/plugins/ictuwp-plugin-initiatievenkaart/public/css/images/marker-shadow.svg`,
+          shadowUrl: `${Utils.pluginurl}css/images/marker-shadow.svg`,
           iconSize: [this.iconWidth, this.iconHeight],
           iconAnchor: [this.iconWidth / 2, this.iconHeight],
           // shadow: 40 x 40
@@ -131,7 +132,7 @@ Authors:
         // add the layer to the map
         // comment this line if only BRT is needed:
         this.getLMap().addLayer(osm);
-                
+
         // basemap: BRT Achtergrondkaart: basisregistratie topografie, via PDOK/Kadaster
         const brtUrl = 'https://service.pdok.nl/brt/achtergrondkaart/wmts/v2_0/standaard/EPSG:3857/{z}/{x}/{y}.png';
         const brtAttrib = 'Kaartgegevens: © <a href="http://www.cbs.nl">CBS</a>, <a href="http://www.kadaster.nl">Kadaster</a>, <a href="http://openstreetmap.org">OpenStreetMap</a><span class="printhide">-auteurs (<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>).</span>';
@@ -185,7 +186,8 @@ Authors:
         this.getLMap().on("popupclose", function (evt) {
           try {
             _self.previousFocus.focus();
-          } catch (e) {}
+          } catch (e) {
+          }
         })
 
       }
@@ -245,7 +247,7 @@ Authors:
           if (category in _self.typeLegendLabels) title = _self.typeLegendLabels[category];
 
           var label = '';
-          if ( category && plaatsnaam && initiatiefnaam ) {
+          if (category && plaatsnaam && initiatiefnaam) {
 //            label = '[[ ' + initiatiefnaam + ' in ' + plaatsnaam + ']]';
             label = initiatiefnaam;
           }
@@ -348,15 +350,17 @@ Authors:
     }
 
     getIconURL(category) {
-      // Utils.siteurl is set in: public/class-initiatieven-kaart-public.php
-      return `${Utils.siteurl}/wp-content/plugins/ictuwp-plugin-initiatievenkaart/public/css/images/marker-${category.toLowerCase()}.svg`;
+      // Utils.pluginurl wordt meegegeven via wp_localize_script
+      // net als het icoontje bij de categorie
+      var cat = Utils[category];
+      return `${Utils.pluginurl}css/images/marker-${cat}.svg`;
     }
 
     createTypeFilterControl() {
       const _self = this;
       var TypeFilterControl = L.Control.extend({
         options: {
-          position: 'topright'
+          position: 'bottomleft'
         },
         onAdd: function (map) {
           const container = L.DomUtil.create('div', 'leaflet-bar leaflet-control leaflet-control-custom map-item-control-types');
@@ -378,12 +382,21 @@ Authors:
       // sort by keys, could be labels later
       const typeKeys = Object.keys(this.types);
       typeKeys.sort();
+      var addCheckboxes = false;
+      var legendatitel = Utils.legendatitel;
+      if (Object.keys(this.types).length > 1) {
+        addCheckboxes = true;
+      }
+      let filter_fieldset = jQuery(`<fieldset>`);
+      let filter_legend = jQuery(`<legend class="legendatitel">`).html(legendatitel);
+      filter_fieldset.append(filter_legend);
 
-      let filterContent = jQuery(`<h3>`).html(`Toon initiatieven van:`);
-      let filterContentList = jQuery(`<ul>`);
+      // TODO: lijstje in een fieldset zetten
+      let filter_filteritems = jQuery(`<ul>`);
       for (var k in typeKeys) {
         const category = typeKeys[k];
         let labelTxt = category;
+        var filter_checkbox = '';
         if (category in this.typeLegendLabels) {
           labelTxt = this.typeLegendLabels[category];
         }
@@ -391,24 +404,31 @@ Authors:
         const inputId = `post-${category}`;
         const checkedTxt = (this.types[category].visible == false) ? "" : "checked";
 
-        // create the checkbox for type selection
-        let input = jQuery(`<input type="checkbox" id="${inputId}" ${checkedTxt}/>`);
-        // note the scope _self: this function is only called from the GUI, so 'this' does not refer to this class. Use _self for that.
-        jQuery(input).on('change', function (evt) {
-          _self.toggleType(_self, category, evt.target.checked)
-        });
+        if (addCheckboxes == true) {
+          // create the checkbox for type selection
+          filter_checkbox = jQuery(`<input type="checkbox" id="${inputId}" ${checkedTxt}/>`);
+          // note the scope _self: this function is only called from the GUI, so 'this' does not refer to this class. Use _self for that.
+          jQuery(filter_checkbox).on('change', function (evt) {
+            _self.toggleType(_self, category, evt.target.checked)
+          });
+
+        }
+
         // create the icon of the type (issue #22)
         let iconTitle = `Icoon voor ${labelTxt}`;
-        let iconImg = jQuery(`<img>`).attr('src', this.getIconURL(category)).attr('title', iconTitle).attr('alt', iconTitle).attr('aria-hidden', 'true');
+        let iconImg = jQuery(`<img>`).attr('src', this.getIconURL(category)).attr('alt', iconTitle).attr('aria-hidden', 'true');
         let labelElem = jQuery(`<label for="${inputId}">${labelTxt} (${nrPosts})</label>`);
 
         // now glue it together for the list
-        let li = jQuery(`<li>`).append(input).append(iconImg).append(labelElem);
-        filterContentList.append(li);
+        let li = jQuery(`<li>`).append(filter_checkbox).append(iconImg).append(labelElem);
+        filter_filteritems.append(li);
       }
-      // filterContent.append(filterContentList);
-      jQuery("#" + this.typeFilterControlTxtId).html(filterContent).append(filterContentList);
-      return filterContent;
+
+      filter_fieldset.append(filter_filteritems);
+
+      // filter_fieldset.append(filter_filteritems);
+      jQuery("#" + this.typeFilterControlTxtId).html(filter_fieldset);
+      return filter_fieldset;
     }
 
     toggleType(_self, category, show) {
@@ -454,7 +474,6 @@ Authors:
       jQuery(".leaflet-control-zoom-out").removeAttr("title").removeAttr("aria-label").text('Zoom uit');
       // custom controls:
       jQuery(".leaflet-control-zoomall").attr("role", "button").attr("tabindex", "0");
-
 
 
     }

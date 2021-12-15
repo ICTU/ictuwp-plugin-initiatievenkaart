@@ -2,7 +2,7 @@
 Een paar basiskleuren
  */
 :root{
-  --leaflet-control-slight-transparent: rgba(255, 255, 255, 0.8);
+  --leaflet-control-slight-transparent: rgba(255, 255, 255, 1);
   --rijksoverheid-blue: #01689b;
 }
 
@@ -71,6 +71,19 @@ De custom controls beetje opmaken en in lijn brengen met standaard Leaflet contr
  */
 .map-item-control-types {
   background-color: var(--leaflet-control-slight-transparent);
+  padding: .5rem;
+}
+.map-item-control-types ul {
+  margin: 0;
+  padding: 0;
+}
+.map-item-control-types legend,
+.map-item-control-types h2,
+.map-item-control-types h3 {
+  font-weight: bold;
+  font-size: .75rem;
+  margin: .25rem 0;
+  padding: 0;
 }
 
 .typeFilterControlTxt {
@@ -84,27 +97,7 @@ De custom controls beetje opmaken en in lijn brengen met standaard Leaflet contr
   margin: 0 0.3em 0 0.5em;
 }
 
-/* -----------------------------------------------------------
-de lijst met initiatieftypes
- */
-dl.initiatieftype {
-    float: none;
-    clear: both;
-    overflow: hidden;
-}
-dl.initiatieftype dt {
-    max-width: inherit;
-    clear: left;
-    float: left;
-    font-weight: bold;
-}
-dl.initiatieftype dd {
-    float: left;
-    clear: right;
-    margin-left: 1rem;
-    max-width: inherit;
-    width: auto;
-}
+
 
 /* -----------------------------------------------------------
 misschien moet dit naar leaflet.css, maar ik denk dat 1 css-bestand
