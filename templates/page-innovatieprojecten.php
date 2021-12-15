@@ -14,11 +14,17 @@ if ( function_exists( 'genesis' ) ) {
 	add_action( 'genesis_before_loop', 'led_initiatieven_archive_title', 8 );
 
 	/** standard loop vervangen door custom loop */
-	remove_action( 'genesis_loop', 'genesis_do_loop' );
-	add_action( 'genesis_loop', 'led_initiatieven_archive_list' );
+	if ( is_post_type_archive( CPT_PROJECT ) || is_page() ) {
+		// check is nodig om te voorkomen dat in zoekresultaten rare dingen gebeuren
 
-	// lijstjes toevoegen met de diverse custom taxonomieen
-	add_action( 'genesis_loop', 'led_initiatieven_taxonomy_list' );
+		remove_action( 'genesis_loop', 'genesis_do_loop' );
+
+		// lijstje met initiatieven toevoegen
+		add_action( 'genesis_loop', 'led_innovatieprojecten_page_list', 8 );
+		// lijstjes toevoegen met de diverse custom taxonomieen
+		add_action( 'genesis_loop', 'led_initiatieven_taxonomy_list' );
+	}
+
 
 	// make it so
 	genesis();
@@ -34,7 +40,7 @@ if ( function_exists( 'genesis' ) ) {
 		<div id="content" class="clearfix">
 
 			<?php echo led_initiatieven_archive_title() ?>
-			<?php echo led_initiatieven_archive_list() ?>
+			<?php echo led_innovatieprojecten_page_list() ?>
 			<?php echo led_initiatieven_taxonomy_list() ?>
 
 		</div><!-- #content -->
@@ -51,31 +57,46 @@ if ( function_exists( 'genesis' ) ) {
 
 //========================================================================================================
 
-function led_initiatieven_archive_list( $doreturn = false ) {
+function led_innovatieprojecten_page_list( $doreturn = false ) {
 
 	global $post;
 
+	$argscount = array(
+		'post_type'      => CPT_PROJECT,
+		'post_status'    => 'publish',
+		'orderby'        => 'title',
+		'order'          => 'ASC',
+		'posts_per_page' => - 1,
+	);
+
+	// Assign predefined $args to your query
+	$contentblockpostscount = new WP_query();
+	$contentblockpostscount->query( $argscount );
+
 	$return = '';
 
-	if ( have_posts() ) {
+	if ( $contentblockpostscount->have_posts() ) {
 
-		if ( is_post_type_archive( CPT_INITIATIEF ) || is_post_type_archive( CPT_PROJECT ) ) {
-			$return .= led_initiatieven_list_before( true );
-		}
 		$initiatieficons = led_get_initiatieficons();
-		$return          .= '<ul id="map-items">';
+		$return .= led_initiatieven_list_before( true );
 
-		while ( have_posts() ) : the_post();
+		$return .= '<ul id="map-items">';
 
-			$return .= led_get_list_item_archive( $post, $initiatieficons );
+		while ( $contentblockpostscount->have_posts() ) : $contentblockpostscount->the_post();
+
+			$return .= led_get_list_item_archive( $post, $initiatieficons, CT_PROJECTORGANISATIE );
 
 		endwhile;
 
 		$return .= '</ul>';
 
+	} else {
+		$return .= 'geen initiatieven';
 	}
-
 	$return .= led_initiatieven_list_after( true );
+
+	wp_reset_query();
+	wp_reset_postdata();
 
 	if ( $doreturn ) {
 		return $return;
@@ -85,3 +106,5 @@ function led_initiatieven_archive_list( $doreturn = false ) {
 }
 
 //========================================================================================================
+
+

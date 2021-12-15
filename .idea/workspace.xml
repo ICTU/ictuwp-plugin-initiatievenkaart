@@ -3,7 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="1a24d279-8cc2-468f-858b-3f0dd79cecc0" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/class-initiatieven-kaart-public.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/class-initiatieven-kaart-public.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ictuwp-plugin-initiatievenkaart.php" beforeDir="false" afterPath="$PROJECT_DIR$/ictuwp-plugin-initiatievenkaart.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/page-initiatieven.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/page-initiatieven.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,6 +17,12 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="ProblemsViewState">
+    <hideBySeverity>
+      <option value="15" />
+      <option value="200" />
+    </hideBySeverity>
+  </component>
   <component name="ProjectId" id="1xXSnob92DuriFYt2ivOajIbaRh" />
   <component name="ProjectViewState">
     <option name="autoscrollFromSource" value="true" />
@@ -27,7 +34,13 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/templates" />
     <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/templates" />
+    </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -44,6 +57,13 @@
       <workItem from="1634290472941" duration="317000" />
       <workItem from="1634631194050" duration="127000" />
       <workItem from="1635860537390" duration="2347000" />
+      <workItem from="1637708670180" duration="24423000" />
+      <workItem from="1638203152134" duration="594000" />
+      <workItem from="1638432423393" duration="597000" />
+      <workItem from="1638539102079" duration="212000" />
+      <workItem from="1638542838258" duration="31999000" />
+      <workItem from="1638907342534" duration="914000" />
+      <workItem from="1639041897371" duration="6304000" />
     </task>
     <servers />
   </component>
@@ -51,9 +71,25 @@
     <option name="version" value="3" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="2211" y="485" width="1006" height="518" key="find.popup" timestamp="1635862655799">
+    <state x="298" y="97" width="1035" height="582" key="find.popup" timestamp="1639082982849">
+      <screen x="0" y="25" width="1440" height="875" />
+    </state>
+    <state x="2211" y="485" width="1006" height="548" key="find.popup/0.25.1440.875/1440.-275.2560.1415@1440.-275.2560.1415" timestamp="1638970002942" />
+    <state x="298" y="97" width="1035" height="582" key="find.popup/0.25.1440.875@0.25.1440.875" timestamp="1639082982849" />
+    <state x="2385" y="49" width="670" height="676" key="search.everywhere.popup" timestamp="1637835899181">
       <screen x="1440" y="-275" width="2560" height="1415" />
     </state>
-    <state x="2211" y="485" width="1006" height="518" key="find.popup/0.25.1440.875/1440.-275.2560.1415@1440.-275.2560.1415" timestamp="1635862655799" />
+    <state x="2385" y="49" width="670" height="676" key="search.everywhere.popup/0.25.1440.875/1440.-275.2560.1415@1440.-275.2560.1415" timestamp="1637835899181" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/includes/acf-definitions.php</url>
+          <line>7</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

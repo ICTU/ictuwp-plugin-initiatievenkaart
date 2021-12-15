@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="112px" height="150px" viewBox="0 0 112 150" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>marker-r</title>
+    <g id="marker-r" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Group" transform="translate(4.000000, 4.000000)" fill="#01689B" fill-rule="nonzero" stroke="#FFFFFF" stroke-linecap="round" stroke-linejoin="round" stroke-opacity="0.94117647" stroke-width="7">
+            <g id="path883">
+                <path d="M103.747296,49.70028 C103.747296,90.914235 51.968146,141.733895 51.968146,141.733895 C51.968146,141.733895 0,90.725245 0,49.70028 C0,20.581568 21.407939,-1.42108547e-14 51.779156,-1.42108547e-14 C82.150376,-1.42108547e-14 103.747296,20.581569 103.747296,49.70028 Z"></path>
+            </g>
+        </g>
+        <path d="M57.17,91.09 L57.17,59.05 C60.23,56.71 63.02,55.81 65.81,55.81 C67.7,55.81 68.96,55.99 70.85,56.44 L71.57,46.63 C69.95,46.18 68.42,46 66.44,46 C62.93,46 60.14,47.53 57.08,51.49 L57.08,46.36 L47,46.81 L47,91.09 L57.17,91.09 Z" id="r" fill="#FFFFFF" fill-rule="nonzero"></path>
+    </g>
+</svg>
