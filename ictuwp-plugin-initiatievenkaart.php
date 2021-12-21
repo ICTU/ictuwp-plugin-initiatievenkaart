@@ -559,9 +559,9 @@ function led_get_initiatief_permalink( $initiatiefid = 0 ) {
 		return;
 	}
 
-	$led_pageid_overview = get_theme_mod( 'customizer_led_pageid_overview' );
+	$customizer_pageid_led = get_theme_mod( 'customizer_led_pageid_overview' );
 
-	if ( $led_pageid_overview ) {
+	if ( $customizer_pageid_led ) {
 
 		$base = get_permalink( $initiatiefid );
 
@@ -751,21 +751,16 @@ function led_initiatieven_archive_title( $doreturn = false ) {
 	global $wp_query;
 	global $post;
 
-	$archive_title                               = _x( 'Initiatieven', 'Archive initiatieven', 'initiatieven-kaart' );
-	$archive_description                         = '';
-	$return                                      = '';
-	$count                                       = $wp_query->post_count;
-	$customizer_innovatieproject_pageid_overview = get_theme_mod( 'customizer_innovatieproject_pageid_overview' );
+	$archive_title                      = _x( 'Initiatieven', 'Archive initiatieven', 'initiatieven-kaart' );
+	$archive_description                = '';
+	$return                             = '';
+	$count                              = $wp_query->post_count;
+	$customizer_pageid_innovatieproject = get_theme_mod( 'customizer_innovatieproject_pageid_overview' );
+	$customizer_pageid_led              = get_theme_mod( 'customizer_led_pageid_overview' );
 
 	if ( is_page() || is_post_type_archive( CPT_PROJECT ) ) {
-		if ( $customizer_innovatieproject_pageid_overview ) {
 
-			$content_post        = get_post( $customizer_innovatieproject_pageid_overview );
-			$archive_title       = get_the_title( $customizer_innovatieproject_pageid_overview );
-			$content             = $content_post->post_content;
-			$archive_description = apply_filters( 'the_content', $content );
-
-		} else {
+		if ( is_post_type_archive( CPT_PROJECT ) ) {
 			// anders is de paginatitel het label dat we aan het CPT hebben gegeven
 			// info ophalen voor custom post type CPT_INITIATIEF
 			$obj = get_post_type_object( CPT_PROJECT );
@@ -774,19 +769,37 @@ function led_initiatieven_archive_title( $doreturn = false ) {
 				$archive_title = $obj->labels->archives;
 			}
 
-		}
+		} else {
 
+			$pageid = get_the_id();
+
+			if ( $customizer_pageid_led === $pageid ) {
+				$content_post        = get_post( $customizer_pageid_led );
+				$archive_title       = get_the_title( $customizer_pageid_led );
+				$content             = $content_post->post_content;
+				$archive_description = apply_filters( 'the_content', $content );
+
+			} elseif ( $customizer_pageid_innovatieproject === $pageid ) {
+
+				$content_post        = get_post( $customizer_pageid_innovatieproject );
+				$archive_title       = get_the_title( $customizer_pageid_innovatieproject );
+				$content             = $content_post->post_content;
+				$archive_description = apply_filters( 'the_content', $content );
+
+			}
+
+		}
 		$return = '<h1>' . $archive_title . '</h1>';
 
 	} elseif ( is_post_type_archive( CPT_INITIATIEF ) ) {
 
-		$led_pageid_overview = get_theme_mod( 'customizer_led_pageid_overview' );
+		$customizer_pageid_led = get_theme_mod( 'customizer_led_pageid_overview' );
 		// als er een pagina is aangewezen als overview voor de initiatieven, neem
 		// dan die titel over
-		if ( $led_pageid_overview ) {
+		if ( $customizer_pageid_led ) {
 
-			$content_post        = get_post( $led_pageid_overview );
-			$archive_title       = get_the_title( $led_pageid_overview );
+			$content_post        = get_post( $customizer_pageid_led );
+			$archive_title       = get_the_title( $customizer_pageid_led );
 			$content             = $content_post->post_content;
 			$archive_description = apply_filters( 'the_content', $content );
 
@@ -1119,7 +1132,7 @@ function led_initiatieven_list_after( $doreturn = true ) {
 		$led_text_after_list = get_theme_mod( 'led_text_after_list' );
 	}
 
-	$return              = '';
+	$return = '';
 	if ( $led_text_after_list ) {
 		$return = '<div class="led-initiatievenkaart-warning-after"><p>' . $led_text_after_list . '</p></div>';
 	}
@@ -1166,9 +1179,9 @@ add_filter( 'wpseo_title', 'led_initiatieven_add_to_page_titles' ); // hook voor
 
 function led_initiatieven_add_to_page_titles( $title ) {
 	global $wp_query;
-	$led_pageid_overview = get_theme_mod( 'customizer_led_pageid_overview' );
-	$page_template       = get_post_meta( get_the_id(), '_wp_page_template', true );
-	$count               = $wp_query->post_count;
+	$customizer_pageid_led = get_theme_mod( 'customizer_led_pageid_overview' );
+	$page_template         = get_post_meta( get_the_id(), '_wp_page_template', true );
+	$count                 = $wp_query->post_count;
 
 	if ( is_singular( CPT_INITIATIEF ) ) {
 
@@ -1178,7 +1191,7 @@ function led_initiatieven_add_to_page_titles( $title ) {
 	} elseif ( is_post_type_archive( CPT_INITIATIEF ) ) {
 
 		// het totaaloverzicht van alle initiatieven
-		$title = get_the_title( $led_pageid_overview );
+		$title = get_the_title( $customizer_pageid_led );
 
 	} elseif ( is_tax( CT_INITIATIEFTYPE ) || is_tax( CT_PROVINCIE ) ) {
 
@@ -1207,7 +1220,7 @@ function led_initiatieven_add_to_page_titles( $title ) {
 	} elseif ( 'page-initiatieven.php' == $page_template ) {
 
 		// het totaaloverzicht van alle initiatieven
-		$title = get_the_title( $led_pageid_overview );
+		$title = get_the_title( $customizer_pageid_led );
 
 	}
 

@@ -4,7 +4,6 @@
     <list default="true" id="1a24d279-8cc2-468f-858b-3f0dd79cecc0" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ictuwp-plugin-initiatievenkaart.php" beforeDir="false" afterPath="$PROJECT_DIR$/ictuwp-plugin-initiatievenkaart.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/page-initiatieven.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/page-initiatieven.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,6 +63,7 @@
       <workItem from="1638542838258" duration="31999000" />
       <workItem from="1638907342534" duration="914000" />
       <workItem from="1639041897371" duration="6304000" />
+      <workItem from="1640092039435" duration="422000" />
     </task>
     <servers />
   </component>
@@ -71,10 +71,10 @@
     <option name="version" value="3" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="298" y="97" width="1035" height="582" key="find.popup" timestamp="1639082982849">
-      <screen x="0" y="25" width="1440" height="875" />
+    <state x="2211" y="485" width="1006" height="548" key="find.popup" timestamp="1640092168914">
+      <screen x="1440" y="-275" width="2560" height="1415" />
     </state>
-    <state x="2211" y="485" width="1006" height="548" key="find.popup/0.25.1440.875/1440.-275.2560.1415@1440.-275.2560.1415" timestamp="1638970002942" />
+    <state x="2211" y="485" width="1006" height="548" key="find.popup/0.25.1440.875/1440.-275.2560.1415@1440.-275.2560.1415" timestamp="1640092168914" />
     <state x="298" y="97" width="1035" height="582" key="find.popup/0.25.1440.875@0.25.1440.875" timestamp="1639082982849" />
     <state x="2385" y="49" width="670" height="676" key="search.everywhere.popup" timestamp="1637835899181">
       <screen x="1440" y="-275" width="2560" height="1415" />
