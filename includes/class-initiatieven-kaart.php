@@ -68,6 +68,9 @@ class Initiatieven_Kaart {
 	 */
 	protected $icons;
 
+	protected $template_initiatievenpagina;
+	protected $template_innovatieprojectpagina;
+
 
 	/**
 	 * Define the core functionality of the plugin.
