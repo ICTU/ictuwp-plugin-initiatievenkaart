@@ -134,4 +134,4 @@ Dit doe je via de Customizer, als je admin-rechten hebt op je website, via:
 Kies uit de dropdown-lijst de pagina waarop alle initatieven staan.
 
 ## Current version:
-* 1.0.8 - PHP 8.x compatibility check. 
+* 1.0.11 - PHP 8.x compatibility check. 
