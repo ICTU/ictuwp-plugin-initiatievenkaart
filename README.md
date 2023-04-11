@@ -133,5 +133,5 @@ Dit doe je via de Customizer, als je admin-rechten hebt op je website, via:
 
 Kies uit de dropdown-lijst de pagina waarop alle initatieven staan.
 
-## Versies
+## Current version:
 * 1.0.7 - Plugin hernoemd naar ictuwp-plugin-initiatievenkaart
