@@ -2,10 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1a24d279-8cc2-468f-858b-3f0dd79cecc0" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CHANGELOG.md" beforeDir="false" afterPath="$PROJECT_DIR$/CHANGELOG.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ictuwp-plugin-initiatievenkaart.php" beforeDir="false" afterPath="$PROJECT_DIR$/ictuwp-plugin-initiatievenkaart.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/archive-initiatieven.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/archive-initiatieven.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,7 +73,14 @@
       <workItem from="1642774780182" duration="597000" />
       <workItem from="1647103823724" duration="1449000" />
       <workItem from="1680774604368" duration="631000" />
-      <workItem from="1681202672656" duration="1155000" />
+      <workItem from="1681202672656" duration="2875000" />
+      <workItem from="1684239472255" duration="1722000" />
+      <workItem from="1684255557893" duration="89000" />
+      <workItem from="1684924373729" duration="10704000" />
+      <workItem from="1685036122298" duration="2084000" />
+      <workItem from="1685285985070" duration="456000" />
+      <workItem from="1685537655069" duration="991000" />
+      <workItem from="1685604097268" duration="1108000" />
     </task>
     <servers />
   </component>
