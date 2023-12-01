@@ -66,7 +66,7 @@ function led_project_single_info( $doreturn = false ) {
 
 
 	if ( $organisatietype && ! is_wp_error( $organisatietype ) ) :
-		// check in welk initiatieftype dit initatieftype zit
+		// check in welk initiatieftype dit initiatieftype zit
 		// aan dit type hangt o.m. het icoontje
 		// NB op dit moment is het praktisch mogelijk om een initiatief aan
 		// MEERDERE initiatieftypes te hangen

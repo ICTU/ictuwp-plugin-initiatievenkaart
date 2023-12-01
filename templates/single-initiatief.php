@@ -55,7 +55,7 @@ function led_initiatief_single_info( $doreturn = false ) {
 	$return          = '';
 	$provincie       = array();
 	$initiatieficons = led_get_initiatieficons();
-	$initatieftypes  = get_the_terms( get_the_id(), CT_INITIATIEFTYPE );
+	$initiatieftypes = get_the_terms( get_the_id(), CT_INITIATIEFTYPE );
 
 	// haal de waarden op uit de ACF-velden
 	$locationField         = get_field( 'openstreet_map' );
@@ -71,8 +71,8 @@ function led_initiatief_single_info( $doreturn = false ) {
 		}
 	}
 
-	if ( $initatieftypes && ! is_wp_error( $initatieftypes ) ) :
-		// check in welk initiatieftype dit initatieftype zit
+	if ( $initiatieftypes && ! is_wp_error( $initiatieftypes ) ) :
+		// check in welk initiatieftype dit initiatieftype zit
 		// aan dit type hangt o.m. het icoontje
 		// NB op dit moment is het praktisch mogelijk om een initiatief aan
 		// MEERDERE initiatieftypes te hangen
@@ -80,9 +80,9 @@ function led_initiatief_single_info( $doreturn = false ) {
 		$classes = array();
 		$labels  = '';
 
-		foreach ( $initatieftypes as $term ) {
+		foreach ( $initiatieftypes as $term ) {
 
-			// het icoontje dat bij dit initatieftype hoort, staat in de array $initiatieficons
+			// het icoontje dat bij dit initiatieftype hoort, staat in de array $initiatieficons
 			$classes[ $term->slug ] = $initiatieficons[ $term->slug ]['slug'];
 			$labels                 .= '<dd class="' . $term->slug . '">' . $term->name . '</dd>';
 		}
