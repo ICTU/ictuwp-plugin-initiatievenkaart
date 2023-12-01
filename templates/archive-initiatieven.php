@@ -6,9 +6,6 @@ if ( function_exists( 'genesis' ) ) {
 	// dit geldt voor o.m. het theme voor Digitale Overheid
 
 	// in de breadcrumb zetten we de link naar de algemene kaart
-	add_filter( 'genesis_single_crumb', 'projecten_initiatieven_filter_breadcrumb', 10, 2 );
-	add_filter( 'genesis_page_crumb', 'projecten_initiatieven_filter_breadcrumb', 10, 2 );
-	add_filter( 'genesis_archive_crumb', 'projecten_initiatieven_filter_breadcrumb', 10, 2 );
 
 	// titel toevoegen
 	add_action( 'genesis_before_loop', 'led_initiatieven_archive_title', 8 );
