@@ -205,17 +205,17 @@ function led_custom_tax_and_types() {
 
 	// Initiatieftype
 	$labels = array(
-		'name'              => esc_html_x( 'Type initatief', 'taxonomy', 'initiatieven-kaart' ),
-		'singular_name'     => esc_html_x( 'Initatieftype', 'taxonomy singular name', 'initiatieven-kaart' ),
-		'search_items'      => esc_html_x( 'Search initatieftype', 'taxonomy', 'initiatieven-kaart' ),
-		'all_items'         => esc_html_x( 'All initatieftypes', 'taxonomy', 'initiatieven-kaart' ),
-		'parent_item'       => esc_html_x( 'Parent initatieftype', 'taxonomy', 'initiatieven-kaart' ),
-		'parent_item_colon' => esc_html_x( 'Parent initatieftype:', 'taxonomy', 'initiatieven-kaart' ),
-		'edit_item'         => esc_html_x( 'Edit initatieftype', 'taxonomy', 'initiatieven-kaart' ),
-		'update_item'       => esc_html_x( 'Update initatieftype', 'taxonomy', 'initiatieven-kaart' ),
-		'add_new_item'      => esc_html_x( 'Add New initatieftype', 'taxonomy', 'initiatieven-kaart' ),
-		'new_item_name'     => esc_html_x( 'New initatieftype Name', 'taxonomy', 'initiatieven-kaart' ),
-		'menu_name'         => esc_html_x( 'Initatieftype', 'taxonomy', 'initiatieven-kaart' ),
+		'name'              => esc_html_x( 'Type initiatief', 'taxonomy', 'initiatieven-kaart' ),
+		'singular_name'     => esc_html_x( 'Initiatieftype', 'taxonomy singular name', 'initiatieven-kaart' ),
+		'search_items'      => esc_html_x( 'Search initiatieftype', 'taxonomy', 'initiatieven-kaart' ),
+		'all_items'         => esc_html_x( 'All initiatieftypes', 'taxonomy', 'initiatieven-kaart' ),
+		'parent_item'       => esc_html_x( 'Parent initiatieftype', 'taxonomy', 'initiatieven-kaart' ),
+		'parent_item_colon' => esc_html_x( 'Parent initiatieftype:', 'taxonomy', 'initiatieven-kaart' ),
+		'edit_item'         => esc_html_x( 'Edit initiatieftype', 'taxonomy', 'initiatieven-kaart' ),
+		'update_item'       => esc_html_x( 'Update initiatieftype', 'taxonomy', 'initiatieven-kaart' ),
+		'add_new_item'      => esc_html_x( 'Add New initiatieftype', 'taxonomy', 'initiatieven-kaart' ),
+		'new_item_name'     => esc_html_x( 'New initiatieftype Name', 'taxonomy', 'initiatieven-kaart' ),
+		'menu_name'         => esc_html_x( 'Initiatieftype', 'taxonomy', 'initiatieven-kaart' ),
 	);
 
 	$args = array(
@@ -455,11 +455,11 @@ function led_get_list_item_archive( $postobject, $initiatieficons = array(), $ca
 
 	// use the location attributes to create data-attributes for the map
 	// second term false: current post
-	$locationField  = get_field( 'openstreet_map', $postobject->ID );
-	$title          = get_the_title( $postobject->ID );
-	$permalink      = led_get_initiatief_permalink( $postobject->ID );
-	$initatieftypes = array();
-	$label          = 'type';
+	$locationField   = get_field( 'openstreet_map', $postobject->ID );
+	$title           = get_the_title( $postobject->ID );
+	$permalink       = led_get_initiatief_permalink( $postobject->ID );
+	$initiatieftypes = array();
+	$label           = 'type';
 
 	/*
 	 * haal de intitieftypes op. Dit kunnen er meerdere zijn, op dit moment.
@@ -468,9 +468,9 @@ function led_get_list_item_archive( $postobject, $initiatieficons = array(), $ca
 	 * dus bijv. type 'Community' krijgt een icoontje 'community'
 	 */
 	if ( $categorytype ) {
-		$initatieftypes = get_the_terms( $postobject->ID, $categorytype );
-		$type           = get_taxonomy( $categorytype );
-		$label          = $type->labels->singular_name;
+		$initiatieftypes = get_the_terms( $postobject->ID, $categorytype );
+		$type            = get_taxonomy( $categorytype );
+		$label           = $type->labels->singular_name;
 	}
 	$classes = array();
 
@@ -479,17 +479,17 @@ function led_get_list_item_archive( $postobject, $initiatieficons = array(), $ca
 		$plaatsnaam     = get_field( 'locatie_plaatsnaam', $postobject->ID );
 		$initiatieftype = '';
 
-		if ( $initatieftypes && ! is_wp_error( $initatieftypes ) ) :
-			// check in welk initiatieftype dit initatieftype zit
+		if ( $initiatieftypes && ! is_wp_error( $initiatieftypes ) ) :
+			// check in welk initiatieftype dit initiatieftype zit
 			// aan dit type hangt o.m. het icoontje
 			// NB op dit moment is het praktisch mogelijk om een initiatief aan
 			// MEERDERE initiatieftypes te hangen
 
 			$labels  = '';
 			$counter = 0;
-			foreach ( $initatieftypes as $term ) {
+			foreach ( $initiatieftypes as $term ) {
 				$counter ++;
-				// het icoontje dat bij dit initatieftype hoort, staat in de array $initiatieficons
+				// het icoontje dat bij dit initiatieftype hoort, staat in de array $initiatieficons
 				if ( isset( $initiatieficons[ $term->slug ] ) ) {
 					array_push( $classes, $initiatieficons[ $term->slug ]['name'] );
 				} else {

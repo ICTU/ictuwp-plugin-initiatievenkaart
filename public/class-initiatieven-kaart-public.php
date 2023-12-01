@@ -214,7 +214,7 @@ class Initiatieven_Kaart_Public {
 
 			if ( is_post_type_archive( CPT_INITIATIEF ) ) {
 				// voor de inititatievenkaart
-				$utilities['legendatitel'] = esc_html_x( 'Type initatief', 'taxonomy', 'initiatieven-kaart' );
+				$utilities['legendatitel'] = esc_html_x( 'Type initiatief', 'taxonomy', 'initiatieven-kaart' );
 			} else {
 				// voor de innovatiebudgetkaart
 				$utilities['legendatitel'] = esc_html_x( 'Type organisatie', 'taxonomy', 'initiatieven-kaart' );
