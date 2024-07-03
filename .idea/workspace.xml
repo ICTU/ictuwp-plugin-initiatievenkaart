@@ -1,17 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1a24d279-8cc2-468f-858b-3f0dd79cecc0" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ictuwp-plugin-initiatievenkaart.php" beforeDir="false" afterPath="$PROJECT_DIR$/ictuwp-plugin-initiatievenkaart.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/initiatieven-kaart-nl_NL.mo" beforeDir="false" afterPath="$PROJECT_DIR$/languages/initiatieven-kaart-nl_NL.mo" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/initiatieven-kaart-nl_NL.po" beforeDir="false" afterPath="$PROJECT_DIR$/languages/initiatieven-kaart-nl_NL.po" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/initiatieven-kaart.pot" beforeDir="false" afterPath="$PROJECT_DIR$/languages/initiatieven-kaart.pot" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/class-initiatieven-kaart-public.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/class-initiatieven-kaart-public.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/single-initiatief.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/single-initiatief.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/single-innovatieproject.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/single-innovatieproject.php" afterDir="false" />
-    </list>
+    <list default="true" id="1a24d279-8cc2-468f-858b-3f0dd79cecc0" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -93,7 +83,7 @@
       <workItem from="1698743508628" duration="727000" />
       <workItem from="1698834508609" duration="599000" />
       <workItem from="1699276596680" duration="4475000" />
-      <workItem from="1701421742356" duration="436000" />
+      <workItem from="1701421742356" duration="1112000" />
     </task>
     <servers />
   </component>
