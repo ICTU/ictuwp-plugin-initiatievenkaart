@@ -11,7 +11,7 @@
  * Plugin Name:       Initiatieven Kaart voor LED (digitaleoverheid.nl)
  * Plugin URI:        https://digitaleoverheid.nl/initiatieven-kaart-uri/
  * Description:       Toont LED initiatieven op een kaart
- * Version:           1.0.11
+ * Version:           1.0.12
  * Author:            Thijs Brentjens
  * Author URI:        https://brentjensgeoict.nl
  * License:           GPL-2.0+
@@ -30,7 +30,7 @@ if ( ! defined( 'WPINC' ) ) {
  * Start at version 1.0.0 and use SemVer - https://semver.org
  * Rename this for your plugin and update it as you release new versions.
  */
-define( 'INITIATIEVEN_KAART_VERSION', '1.0.11' );
+define( 'INITIATIEVEN_KAART_VERSION', '1.0.12' );
 
 /**
  * The core plugin class that is used to define internationalization,
@@ -73,6 +73,10 @@ run_initiatieven_kaart();
 function led_template_archive_initiatieven( $archive_template ) {
 	global $post;
 
+	if ( is_search() )  {
+		return $archive_template;
+	}
+
 	if ( is_post_type_archive( CPT_INITIATIEF ) ) {
 		// het is een archive voor CPT = CPT_INITIATIEF
 		$archive_template = dirname( __FILE__ ) . '/templates/page-initiatieven.php';
@@ -99,6 +103,10 @@ add_filter( 'archive_template', 'led_template_archive_initiatieven' );
  */
 function led_template_page_initiatieven( $archive_template ) {
 	global $post;
+
+	if ( is_search() )  {
+		return $archive_template;
+	}
 
 	$page_template = get_post_meta( get_the_id(), '_wp_page_template', true );
 
@@ -750,6 +758,10 @@ function led_initiatieven_archive_title( $doreturn = false ) {
 
 	global $wp_query;
 	global $post;
+
+	if ( is_search() )  {
+		return;
+	}
 
 	$archive_title                      = _x( 'Initiatieven', 'Archive initiatieven', 'initiatieven-kaart' );
 	$archive_description                = '';
