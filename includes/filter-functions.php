@@ -177,7 +177,7 @@ function innovatieprojecten_form_object_select( $id, $label, $terms, $current, $
 
 	$return = '';
 	$return .= '<div class="row">';
-	$return .= '        <label for="' . esc_attr( $id ) . '">' . esc_html( $label ) . ' (' . count( $terms ) . 'x)</label>';
+	$return .= '        <label for="' . esc_attr( $id ) . '">' . esc_html( $label ) . '</label>';
 	$return .= '        <select name="' . esc_attr( $id ) . '" id="' . esc_attr( $id ) . '">';
 	$return .= '            <option value="' . FILTER_ALL . '">' . esc_html( $alles_label ) . '</option>';
 	foreach ( $terms as $term ) :
@@ -210,7 +210,6 @@ function led_write_innovatieprojecten_list( $doreturn = false ) {
 	$return               = '';
 	$initiatieficons      = led_get_initiatieficons();
 	$filter_label         = '';
-//	$list_of_all_years    = initiatievenkaart_projects_get_terms( CT_PROJECTJAAR );
 	$list_of_all_years    = initiatievenkaart_terms_for_post_type( CT_PROJECTJAAR , CPT_INNOVATIEPROJECT );
 	$list_of_all_dossiers = initiatievenkaart_terms_for_post_type( RHSWP_CT_DOSSIER, CPT_INNOVATIEPROJECT );
 
