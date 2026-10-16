@@ -6,7 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="1a24d279-8cc2-468f-858b-3f0dd79cecc0" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/single-innovatieproject.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/single-innovatieproject.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CHANGELOG.md" beforeDir="false" afterPath="$PROJECT_DIR$/CHANGELOG.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ictuwp-plugin-initiatievenkaart.php" beforeDir="false" afterPath="$PROJECT_DIR$/ictuwp-plugin-initiatievenkaart.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

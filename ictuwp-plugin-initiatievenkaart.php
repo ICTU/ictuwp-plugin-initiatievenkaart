@@ -11,7 +11,7 @@
  * Plugin Name:       ICTU / WP / DO - initiatievenkaart
  * Plugin URI:        https://digitaleoverheid.nl/initiatieven-kaart-uri/
  * Description:       Toont LED initiatieven op een kaart
- * Version:           2.0.1
+ * Version:           2.0.2.a
  * Author:            Thijs Brentjens
  * Author URI:        https://brentjensgeoict.nl
  * License:           GPL-2.0+
@@ -30,7 +30,7 @@ if ( ! defined( 'WPINC' ) ) {
  * Start at version 1.0.0 and use SemVer - https://semver.org
  * Rename this for your plugin and update it as you release new versions.
  */
-define( 'INITIATIEVEN_KAART_VERSION', '2.0.1' );
+define( 'INITIATIEVEN_KAART_VERSION', '2.0.2.a' );
 
 /**
  * The core plugin class that is used to define internationalization,

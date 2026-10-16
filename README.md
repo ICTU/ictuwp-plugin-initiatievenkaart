@@ -134,4 +134,4 @@ Dit doe je via de Customizer, als je admin-rechten hebt op je website, via:
 Kies uit de dropdown-lijst de pagina waarop alle initatieven staan.
 
 ## Current version:
-* 2.0.1 - Removed post type and taxonomies for data-initiatieven.
+* 2.0.2.a - Small bugfixes and improvements.
