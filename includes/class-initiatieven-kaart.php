@@ -101,10 +101,29 @@ class Initiatieven_Kaart {
 		if ( ! defined( 'CT_PROJECTORGANISATIE' ) ) {
 			define( 'CT_PROJECTORGANISATIE', 'organisatie' );
 		}
-
 		// taxonomie voor jaar voor een innovatieproject
 		if ( ! defined( 'CT_PROJECTJAAR' ) ) {
 			define( 'CT_PROJECTJAAR', 'jaar-toekenning' );
+		}
+
+		// taxonomie voor jaar voor een innovatieproject
+		if ( ! defined( 'QUERYVAR_SHOW_MAP' ) ) {
+			define( 'QUERYVAR_SHOW_MAP', 'showmap' );
+		}
+		if ( ! defined( 'QUERYVAR_SHOW_MAP_TRUE' ) ) {
+			define( 'QUERYVAR_SHOW_MAP_TRUE', 'yesplease' );
+		}
+		if ( ! defined( 'QUERYVAR_SHOW_MAP_FALSE' ) ) {
+			define( 'QUERYVAR_SHOW_MAP_FALSE', 'nothanks' );
+		}
+		if ( ! defined( 'FILTER_ALL' ) ) {
+			define( 'FILTER_ALL', 'all' );
+		}
+		if ( ! defined( 'FILTER_NOREQUEST' ) ) {
+			define( 'FILTER_NOREQUEST', 'none' );
+		}
+		if ( ! defined( 'DO_SEPARATOR' ) ) {
+			define( 'DO_SEPARATOR', ' | ' );
 		}
 
 		$this->initiatieven_kaart = 'initiatieven-kaart';

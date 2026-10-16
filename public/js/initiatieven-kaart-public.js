@@ -102,7 +102,7 @@ Authors:
 
           // create the toggle map/list button
           const toggleListButton = Object.assign(document.createElement('button'), {
-            textContent: 'Toon de lijst',
+            textContent: 'Toon als lijst',
             id: "toggleListMapButton",
             title: "Wissel tussen het tonen van de kaart en de lijst",
             onclick(ev) {
@@ -480,15 +480,15 @@ Authors:
 
     toggleListMap() {
       if (jQuery("#" + this.mapElementId).is(":visible")) {
-        // hide the map, show the list
+        // map is visible, so hide it and show list
         jQuery("#" + this.mapElementId).hide();
         jQuery("#" + this.mapItemsContainerId).show();
-        jQuery("#toggleListMapButton").html("Toon de kaart");
+        jQuery("#toggleListMapButton").html("Toon op de kaart");
       } else {
-        // the other way around
+        // list is visible, so hide it and show map
         jQuery("#" + this.mapElementId).show();
         jQuery("#" + this.mapItemsContainerId).hide();
-        jQuery("#toggleListMapButton").html("Toon de lijst");
+        jQuery("#toggleListMapButton").html("Toon als lijst");
       }
       this.getLMap().invalidateSize();
       return true;

@@ -8,12 +8,8 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ictuwp-plugin-initiatievenkaart.php" beforeDir="false" afterPath="$PROJECT_DIR$/ictuwp-plugin-initiatievenkaart.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/includes/class-initiatieven-kaart.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/class-initiatieven-kaart.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/class-initiatieven-kaart-public.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/class-initiatieven-kaart-public.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/archive-initiatieven.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/archive-innovatieprojecten.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/archive-innovatieprojecten.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/page-initiatieven.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/page-innovatieprojecten.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/page-innovatieprojecten.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/single-initiatief.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/filter-functions.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/filter-functions.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/single-innovatieproject.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/single-innovatieproject.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,6 +31,12 @@
   <component name="McpProjectServerCommands">
     <commands />
     <urls />
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration">
+    <include_path>
+      <path value="$USER_HOME$/Sites/localhost/digitaleoverheid.test/httpdocs/wp-admin" />
+      <path value="$USER_HOME$/Sites/localhost/digitaleoverheid.test/httpdocs/wp-includes" />
+    </include_path>
   </component>
   <component name="ProblemsViewState">
     <hideBySeverity>
@@ -60,9 +62,9 @@
     &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;development&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;versie-2.0&quot;,
     &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/paul/shared-paul-files/Webs/git-repos/ictuwp-plugin-initiatievenkaart&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/paul/shared-paul-files/Webs/git-repos/ictuwp-plugin-initiatievenkaart/includes&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -74,6 +76,7 @@
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/includes" />
       <recent name="$PROJECT_DIR$/templates" />
     </key>
   </component>

@@ -15,6 +15,16 @@ if ( function_exists( 'genesis' ) ) {
 	// extra informatie toevoegen
 	add_action( 'genesis_after_entry_content', 'led_project_single_info' );
 
+    // extra widget ruimte
+    add_action( 'genesis_entry_footer', 'rhswp_append_widgets_before_socmed_footer', 16 );
+
+    // social media share buttons
+    add_action( 'genesis_entry_footer', 'rhswp_append_socialbuttons', 18 );
+
+    // extra widget ruimte
+    add_action( 'genesis_entry_footer', 'rhswp_append_widgets_after_socmed_footer', 20 );
+
+
 	// make it so
 	genesis();
 
@@ -98,27 +108,78 @@ function led_project_single_info( $doreturn = false ) {
 			$jaren_items .= '</dd>';
 		}
 
-		if ( $organisatietype_items || $jaren_items || $regievoerder || $partners ) {
-			$desciptionlist = '<dl class="new">';
-			if ( $regievoerder ) {
-				$desciptionlist .= '<dt>' . _x( 'Regievoerder', 'Label type organisatie', 'initiatieven-kaart' ) . '</dt>';
-				$desciptionlist .= '<dd>' . $regievoerder . '</dd>';
-			}
-			if ( $partners ) {
-				$desciptionlist .= '<dt>' . _x( 'Partners', 'Label type organisatie', 'initiatieven-kaart' ) . '</dt>';
-				$desciptionlist .= '<dd>' . $partners . '</dd>';
-			}
-			if ( $organisatietype_items ) {
-				$desciptionlist .= '<dt>' . _x( 'Type organisatie', 'Label type organisatie', 'initiatieven-kaart' ) . '</dt>';
-				$desciptionlist .= $organisatietype_items;
-			}
-			if ( $jaren_items ) {
-				$desciptionlist .= '<dt>' . $jaren_label . '</dt>';
-				$desciptionlist .= $jaren_items;
-			}
-			$desciptionlist .= '</dl>';
+        if ( has_term( '', RHSWP_CT_DOSSIER, get_the_id() ) ) {
+            // get dossier terms and their links
 
-		}
+            $terms = get_the_terms( $post->ID, RHSWP_CT_DOSSIER );
+            if ( $terms && ! is_wp_error( $terms ) ) {
+
+                $labels = '';
+
+                foreach ( $terms as $term ) {
+
+                    $labels .= '<dd>';
+                    $labels .= '<a href="';
+                    if ( function_exists( 'rhswp_get_pagelink_for_dossier' ) ) {
+                        $labels .= rhswp_get_pagelink_for_dossier( $term );
+                    } else {
+                        $labels .= get_term_link( $term->term_id, RHSWP_CT_DOSSIER );
+                    }
+                    $labels .= '">' . $term->name . '</a>';
+
+                    if ( next( $terms ) ) {
+                        $labels .= ', ';
+                    }
+                    $labels .= '</dd>';
+
+                }
+
+
+                if ( $labels ) {
+                    $dossiers_label = _x( 'Onderwerpen', 'Label type dossiers', 'initiatieven-kaart' );
+                    $dossiers = $labels;
+                }
+
+            }
+        }
+
+
+        if ( $organisatietype_items || $jaren_items || $regievoerder || $partners ) {
+            $desciptionlist = '<dl>';
+            if ( $regievoerder ) {
+                $desciptionlist .= '<div>';
+                $desciptionlist .= '<dt>' . _x( 'Regievoerder', 'Label type organisatie', 'initiatieven-kaart' ) . '</dt>';
+                $desciptionlist .= '<dd>' . $regievoerder . '</dd>';
+                $desciptionlist .= '</div>';
+            }
+            if ( $partners ) {
+                $desciptionlist .= '<div>';
+                $desciptionlist .= '<dt>' . _x( 'Partners', 'Label type organisatie', 'initiatieven-kaart' ) . '</dt>';
+                $desciptionlist .= '<dd>' . $partners . '</dd>';
+                $desciptionlist .= '</div>';
+            }
+            if ( $organisatietype_items ) {
+                $desciptionlist .= '<div>';
+                $desciptionlist .= '<dt>' . _x( 'Type organisatie', 'Label type organisatie', 'initiatieven-kaart' ) . '</dt>';
+                $desciptionlist .= $organisatietype_items;
+                $desciptionlist .= '</div>';
+            }
+            if ( $jaren_items ) {
+                $desciptionlist .= '<div>';
+                $desciptionlist .= '<dt>' . $jaren_label . '</dt>';
+                $desciptionlist .= $jaren_items;
+                $desciptionlist .= '</div>';
+            }
+            if ( $dossiers ) {
+                $desciptionlist .= '<div>';
+                $desciptionlist .= '<dt>' . $dossiers_label . '</dt>';
+                $desciptionlist .= $dossiers;
+                $desciptionlist .= '</div>';
+            }
+            $desciptionlist .= '</dl>';
+
+        }
+
 
 	endif;
 
@@ -144,7 +205,7 @@ function led_project_single_info( $doreturn = false ) {
 			$adres .= wp_strip_all_tags( $straatnaam_huisnummer ) . '<br>';
 		}
 		if ( $locatie_postcode ) {
-			$adres .= ( ( $adres ) ? wp_strip_all_tags( $locatie_postcode ) . '<br>' : wp_strip_all_tags( $locatie_postcode ) );
+			$adres .= ( ( $adres ) ? wp_strip_all_tags( $locatie_postcode ) . '<br>' : wp_strip_all_tags( $locatie_postcode ) . ', ');
 		}
 		if ( $plaatsnaam ) {
 			$adres .= ( ( $adres ) ? wp_strip_all_tags( $plaatsnaam ) . '<br>' : wp_strip_all_tags( $plaatsnaam ) );
